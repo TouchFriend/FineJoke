@@ -10,6 +10,7 @@
 #import "NJADViewController.h"
 #import "NJTabBarController.h"
 #import <AFNetworkReachabilityManager.h>
+#import <SDImageCache.h>
 @interface AppDelegate ()
 
 @end
@@ -42,6 +43,8 @@
     [self.window makeKeyAndVisible];
     //4.开始监听网络状态
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+//   //5.程序一启动，就清除过期缓存
+//    [[SDImageCache sharedImageCache] cleanDisk];
     return YES;
 }
 

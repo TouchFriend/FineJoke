@@ -14,7 +14,6 @@
 #import "NJPictureVC.h"
 #import "NJWordVC.h"
 
-
 @interface NJEssenceVC () <UIScrollViewDelegate>
 /********* 标题栏 *********/
 @property(nonatomic,weak)UIView * titleView;
@@ -255,12 +254,6 @@ static NSInteger const underlineHeight = 2;
     //获取对应的按钮
     //方法一
     NJTitleButton * titleBtn = self.titleView.subviews[index];
-    /*
-     方法二有缺陷:viewWithTag:用递归查询，包括自己，查看tag是否跟给定的tag一致。
-     而控件默认的都是0，所以传回自己， 所以传0时会特技
-     */
-//    NJTitleButton * titleBtn = [self.titleView viewWithTag:index];
-    
     //点击对应的按钮(联动)
     [self dealTitleBtnClick:titleBtn];
 }

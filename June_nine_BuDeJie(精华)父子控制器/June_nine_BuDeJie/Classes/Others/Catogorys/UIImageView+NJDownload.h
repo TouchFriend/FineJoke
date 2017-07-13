@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
 @interface UIImageView (NJDownload)
-- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:(nullable SDExternalCompletionBlock)completeBlock;
+- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:( SDWebImageCompletionBlock)completeBlock;
 - (void)setHeaderImage:(NSString *)headerImageURL;
 @end

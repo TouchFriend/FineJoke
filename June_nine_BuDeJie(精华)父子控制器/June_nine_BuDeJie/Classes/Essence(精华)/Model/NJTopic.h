@@ -67,6 +67,10 @@ typedef NS_ENUM(NSInteger,NJTopicType)
 @property(nonatomic,strong)NSString * image2;
 /********* 大图(原图) *********/
 @property(nonatomic,strong)NSString * image1;
+/********* 是否是大图 *********/
+@property(nonatomic,assign,getter=isBigPicture)BOOL bigPicture;
+/********* 是否是动态图 *********/
+@property(nonatomic,assign)BOOL is_gif;
 
 
 

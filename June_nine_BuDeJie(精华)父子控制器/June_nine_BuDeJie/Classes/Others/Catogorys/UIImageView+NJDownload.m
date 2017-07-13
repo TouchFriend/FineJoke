@@ -11,7 +11,7 @@
 #import <AFNetworkReachabilityManager.h>
 #import "UIImage+NJImage.h"
 @implementation UIImageView (NJDownload)
-- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:(nullable SDExternalCompletionBlock)completeBlock
+- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:( SDWebImageCompletionBlock)completeBlock
 {
     AFNetworkReachabilityManager * reachabilityManager = [AFNetworkReachabilityManager sharedManager];
     //1.有没有原图(SDWebImage的图片缓存是用图片的url字符串作为key）

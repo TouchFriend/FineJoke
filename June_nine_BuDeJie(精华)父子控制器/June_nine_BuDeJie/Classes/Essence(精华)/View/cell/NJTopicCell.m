@@ -143,6 +143,7 @@
             self.pictureView.hidden = NO;
             self.videoView.hidden = YES;
             self.voiceView.hidden = YES;
+            self.pictureView.topic = topic;//设置数据模型
         }
             break;
         case NJTopicTypeVideo://视频

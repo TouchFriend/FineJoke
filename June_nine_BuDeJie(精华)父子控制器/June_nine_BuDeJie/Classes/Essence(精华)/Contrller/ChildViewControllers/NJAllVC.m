@@ -12,6 +12,8 @@
 #import <MJExtension/MJExtension.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "NJTopicCell.h"
+#import <SDImageCache.h>
+
 #define NJMargin 10
 @interface NJAllVC ()
 /********* maxtime(当前最后一条帖子的描述信息) *********/
@@ -104,7 +106,7 @@ static NSString * const ID = @"NJTopicCellID";
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(NJTopicTypeVideo);//音频
+    parameters[@"type"] = @(NJTopicTypePicture);//音频
     //发送请求
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
         //存储maxtime
@@ -140,7 +142,7 @@ static NSString * const ID = @"NJTopicCellID";
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(NJTopicTypeVideo);//音频
+    parameters[@"type"] = @(NJTopicTypePicture);//音频
     parameters[@"maxtime"] = self.maxtime;
     //发送请求
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
@@ -278,6 +280,8 @@ static NSString * const ID = @"NJTopicCellID";
     [self resolveDownDragRefresh];
     //上拉刷新
     [self resolveUpDragRefresh];
+    //清除缓存
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 //用户松开手后调用
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate

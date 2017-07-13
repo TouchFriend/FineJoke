@@ -30,6 +30,11 @@
         CGFloat middleY = cellHeight;
         CGFloat middleW = textMaxSize.width;//(中间内容的实际宽度)文字的最大宽度
         CGFloat middleH = middleW * self.height / self.width;;//等比例缩放
+        if(middleH > NJScreenH)
+        {
+            middleH = 200;
+            self.bigPicture = YES;
+        }
         _middleFrame = CGRectMake(middleX, middleY, middleW, middleH);
         cellHeight += middleH + NJCellMargin;//cell高度加上中间控件的高度
     }

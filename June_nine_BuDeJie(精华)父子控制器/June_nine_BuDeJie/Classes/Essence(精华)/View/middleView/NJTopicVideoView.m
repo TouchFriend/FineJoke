@@ -9,7 +9,6 @@
 #import "NJTopicVideoView.h"
 #import "NJTopic.h"
 #import <UIImageView+WebCache.h>
-#import <AFNetworking.h>
 #import "NJTopic.h"
 #import "UIImageView+NJDownload.h"
 @interface NJTopicVideoView ()
