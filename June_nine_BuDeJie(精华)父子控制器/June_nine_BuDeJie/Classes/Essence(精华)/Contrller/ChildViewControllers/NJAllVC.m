@@ -7,8 +7,15 @@
 //
 
 #import "NJAllVC.h"
+#import <AFNetworking.h>
+#import "NJTopic.h"
+#import <MJExtension/MJExtension.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface NJAllVC ()
+/********* maxtime(当前最后一条帖子的描述信息) *********/
+@property(nonatomic,strong)NSString * maxtime;
+
 /********* headerView *********/
 @property(nonatomic,weak)UIView * headerView;
 /********* 广告 *********/
@@ -24,9 +31,12 @@
 @property(nonatomic,weak)UILabel * footerLable;
 /********* 是否处于上拉刷新状态 *********/
 @property(nonatomic,assign,getter=isUpDragrefreshStatus)BOOL upDragrefreshStatus;
+/********* 会话管理者 *********/
+@property(nonatomic,strong)AFHTTPSessionManager * manager;
 
-/********* 数据量 *********/
-@property(nonatomic,assign)NSInteger dataCount;
+
+/********* 帖子(数据) *********/
+@property(nonatomic,strong)NSMutableArray * topicsArrM;
 
 @end
 
@@ -35,19 +45,126 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //请求数据
-    self.dataCount = 5;
     self.tableView.backgroundColor = NJRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(NJNavBarMaxY + NJTitleBarHeight, 0, NJTabBarHeight, 0);
     //监听TabBarButton被重复点击的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:NJTabBarButtonDidRepeatClickNotification object:nil];
     //监听标题栏按钮的点击
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleBarButtonDidRepeatClick) name:NJTitleBarButtonDidRepeatClickNotification object:nil];
+    //设置刷新
+    [self setupRefresh];
+    
+    //设置滚动条的内边距
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+}
+#pragma mark - 懒加载
+- (AFHTTPSessionManager *)manager
+{
+    if(_manager == nil)
+    {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
+#pragma mark - 请求下拉加载的数据
+/*
+ 服务器数据：45，44，43，42，41，40，39，38，37，36，35，34，。。。。。。5，4，3，2，1
+ 
+ 下⬇️拉刷新（new-最新）@[45，44，43]
+ 
+ 上⬆️拉刷新（more-更多）@[37，36，35]
+ 
+ 客户端数据：
+ self.topics = @[40，39，38]
+ 
+ 请求的回来先后顺序
+ 1.上⬆️拉刷新（more-更多）-> 下⬇️拉刷新（new-最新）
+ self.topics = @[45，44，43]
+ 
+ 2.下⬇️拉刷新（new-最新）-> 上⬆️拉刷新（more-更多）
+ self.topics = @[45，44，43，37，36，35]
+ */
+- (void)loadNewTopics
+{
+    /*
+     Invalidates the managed session, optionally canceling pending tasks
+     如果用invalidateSessionCancelingTasks:方法，不仅取消任务，还会使这个管理者的session失效，再也不能发送请求。
+     [self.manager invalidateSessionCancelingTasks:YES];
+     */
+    //取消前一次的请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @"31";//音频
+    //发送请求
+    [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
+        //存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        //数据转模型
+        self.topicsArrM = [NJTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //刷新表格
+        [self.tableView reloadData];
+        //结束刷新
+        [self endDownDragRefreshing];
+        NJLog(@"请求成功");
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NJLog(@"%@",error);
+        //不是取消请求的错误，而是其他原因导致的错误 NSURLErrorDomain
+        //NSURLErrorCancelled = -999,
+        if(error.code != NSURLErrorCancelled)
+        {
+           [SVProgressHUD showErrorWithStatus:@"网络繁忙,请稍后再试！"];
+        }
+        //结束刷新
+        [self endDownDragRefreshing];
+        
+    }];
+}
+/*
+ Error Domain=NSURLErrorDomain Code=-999 "cancelled" UserInfo={NSErrorFailingURLKey=http://api.budejie.com/api/api_open.php?a=list&c=data&type=31, NSLocalizedDescription=cancelled, NSErrorFailingURLStringKey=http://api.budejie.com/api/api_open.php?a=list&c=data&type=31}
+ */
+#pragma mark - 请求上拉加载的更多新数据
+- (void)loadMoreTopics
+{
+    //取消前一次的请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @"31";//音频
+    parameters[@"maxtime"] = self.maxtime;
+    //发送请求
+    [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
+        //存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        //数据转模型
+        NSArray * moreTopics = [NJTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //追加旧模型数组中
+        [self.topicsArrM addObjectsFromArray:moreTopics];
+        //刷新表格
+        [self.tableView reloadData];
+        //结束刷新
+        [self endUpDragRefreshing];
+        NJLog(@"请求成功");
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NJLog(@"%@",error);
+        if(error.code != -999)
+        {
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙,请稍后再试！"];
+        }
+        //结束刷新
+        [self endUpDragRefreshing];
+    }];
+}
+
+#pragma mark - 设置刷新
+- (void)setupRefresh
+{
     //设置上拉刷新
     [self setupUpDragRefresh];
     //设置下拉刷新
     [self setupDownDragRefresh];
-    //设置滚动条的内边距
-    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 #pragma mark - 设置下拉刷新
 - (void)setupDownDragRefresh
@@ -70,6 +187,9 @@
     headerLabel.textAlignment = NSTextAlignmentCenter;
     [headerView addSubview:headerLabel];
     self.headerLabel = headerLabel;
+    
+    //一进入view就自动刷新
+    [self beginDownDragRefreshing];
 }
 #pragma mark - 设置上拉刷新
 - (void)setupUpDragRefresh
@@ -86,8 +206,8 @@
     footerLable.textAlignment = NSTextAlignmentCenter;
     [footerView addSubview:footerLable];
     self.footerLable = footerLable;
-
     
+
 }
 #pragma mark - 标题栏按钮被点击
 - (void)titleBarButtonDidRepeatClick
@@ -109,16 +229,13 @@
     }
     //下拉刷新数据
     [self beginDownDragRefreshing];
-    //设置offsetY
-    self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x, - self.tableView.contentInset.top);
-    NJFunc;
 }
 #pragma mark - 数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //判断数据量是否为0，为0隐藏footerView
-    self.footerView.hidden = (self.dataCount == 0);
-    return self.dataCount;
+    self.footerView.hidden = (self.topicsArrM.count == 0);
+    return self.topicsArrM.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -129,7 +246,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         cell.backgroundColor = [UIColor clearColor];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@-%zd", self.class, indexPath.row];
+    //取出对应的模型
+    NJTopic * topic = self.topicsArrM[indexPath.row];
+    cell.textLabel.text = topic.name;
     return cell;
 }
 #pragma mark - dealloc
@@ -150,11 +269,6 @@
 //用户松开手后调用
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    //如果处于下拉刷新状态，则返回
-    if([self isDownDragRefreshStatus])
-    {
-        return;
-    }
     //判断松手时下拉刷新条是否完全显示
     CGFloat offsetY = NJNavBarMaxY + NJTitleBarHeight + self.headerView.NJ_height;
     if(self.tableView.contentOffset.y <= - offsetY)
@@ -190,11 +304,6 @@
     {
         return;
     }
-    //正在刷新状态，则返回
-    if([self isUpDragrefreshStatus])
-    {
-        return;
-    }
     //上拉刷新条是否完全显示 (内容高度 + 底部内边距 - 可视范围高度（frame高度）)
     CGFloat offsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.NJ_height ;
     CGFloat contentOffsetY = self.tableView.contentOffset.y;
@@ -205,35 +314,14 @@
         [self beginUpDragRefreshing];
     }
 }
-#pragma mark - 下拉加载新数据
-- (void)loadNewData
-{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //处理数据
-        self.dataCount = 15;
-        //刷新表格
-        [self.tableView reloadData];
-        //结束下拉刷新
-        [self endDownDragRefreshing];
-    });
-}
-#pragma mark - 上拉加载更多新数据
-- (void)loadMoreData
-{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //获取了数据
-        self.dataCount += 5;
-        //刷新表格
-        [self.tableView reloadData];
-        
-        //结束上拉刷新状态
-        [self endUpDragRefreshing];
-        
-    });
-}
 #pragma mark - 开始下拉刷新
 - (void)beginDownDragRefreshing
 {
+    //如果处于下拉刷新状态，则返回
+    if([self isDownDragRefreshStatus])
+    {
+        return;
+    }
     self.headerLabel.text = NJisDownDragRefreshingText;
     //正在刷新中
     self.downDragRefreshStatus = YES;
@@ -242,10 +330,14 @@
         UIEdgeInsets contentInset = self.tableView.contentInset;
         contentInset.top += self.headerLabel.NJ_height;
         self.tableView.contentInset = contentInset;
+        //设置偏移量
+        [UIView animateWithDuration:0.5 animations:^{
+            self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x, - self.tableView.contentInset.top);
+        }];
     }];
     //发送请求,加载新数据
-    [self loadNewData];
-    NJFunc;
+    [self loadNewTopics];
+    NSLog(@"下拉刷新，加载新的数据");
 
 }
 #pragma mark - 结束下拉刷新
@@ -263,12 +355,17 @@
 #pragma mark - 开始上拉刷新
 - (void)beginUpDragRefreshing
 {
-    NJLog(@"发送请求，加载数据");
+    //正在上拉刷新状态，则返回
+    if([self isUpDragrefreshStatus])
+    {
+        return;
+    }
+    NJLog(@"上拉刷新，加载更多数据");
     //正在刷新中
     self.upDragrefreshStatus = YES;
     self.footerLable.text = NJisUpDragRefreshingText;
     //发送请求，加载更多数据
-    [self loadMoreData];
+    [self loadMoreTopics];
  
 }
 #pragma mark - 结束上拉刷新状态

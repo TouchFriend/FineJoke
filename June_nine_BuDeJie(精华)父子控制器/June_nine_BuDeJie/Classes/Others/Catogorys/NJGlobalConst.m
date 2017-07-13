@@ -6,7 +6,8 @@
 //  Copyright © 2017年 cxz. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-
+//统一的请求网址
+NSString * const NJCommonURL = @"http://api.budejie.com/api/api_open.php";
 /*************** 精华控制器 ********************/
 //tabBar的高度
 CGFloat const NJTabBarHeight = 49;

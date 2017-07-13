@@ -170,7 +170,7 @@ static NSInteger const underlineHeight = 2;
     }
 }
 #pragma mark - 点击标题按钮
-- (void)titleBtnClick:(NJTitleButton *)titleBtn
+- (IBAction)titleBtnClick:(NJTitleButton *)titleBtn
 {
     //判断上一次被点击的按钮是否是这次被点击的按钮（重复点击）
     if(self.previousBtn == titleBtn)
@@ -178,7 +178,16 @@ static NSInteger const underlineHeight = 2;
         //发布标题栏按钮被重复点击的通知
         [[NSNotificationCenter defaultCenter] postNotificationName:NJTitleBarButtonDidRepeatClickNotification object:nil];
     }
+    //解决被点击的标题按钮的状态
+    [self dealTitleBtnClick:titleBtn];
+    
+}
 
+/**
+ 解决被点击的标题按钮的状态
+ */
+- (void)dealTitleBtnClick:(NJTitleButton *)titleBtn
+{
     //设置前一个选中按钮状态
     self.previousBtn.selected = NO;
     //设置点击按钮选中状态
@@ -215,7 +224,7 @@ static NSInteger const underlineHeight = 2;
         }
         childView.scrollsToTop = (i == index);
     }
-    
+
 }
 #pragma mark - 左边按钮点击事件
 - (void)gameBtnClick
@@ -253,7 +262,7 @@ static NSInteger const underlineHeight = 2;
 //    NJTitleButton * titleBtn = [self.titleView viewWithTag:index];
     
     //点击对应的按钮(联动)
-    [self titleBtnClick:titleBtn];
+    [self dealTitleBtnClick:titleBtn];
 }
 #pragma mark - 添加子控制器的view
 - (void)addSubViewControllerView:(NSUInteger)index

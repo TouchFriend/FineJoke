@@ -33,6 +33,7 @@
 		BF6B62E11EF25C0D00867918 /* NJSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DF1EF25C0D00867918 /* NJSquareCell.m */; };
 		BF6B62E21EF25C0D00867918 /* NJSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6B62E01EF25C0D00867918 /* NJSquareCell.xib */; };
 		BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF730D681EF3DDDD00F0CB05 /* NJFileTool.m */; };
+		BF79F20F1EFAA524009AD9C2 /* NJTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79F20E1EFAA524009AD9C2 /* NJTopic.m */; };
 		BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F11EEE92A70004EE4E /* NJSettingVC.m */; };
 		BFA245F91EEEE6A30004EE4E /* NJADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F81EEEE6A30004EE4E /* NJADViewController.m */; };
 		BFA245FB1EEEE6AE0004EE4E /* NJADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA245FA1EEEE6AE0004EE4E /* NJADViewController.xib */; };
@@ -131,6 +132,8 @@
 		BF6B62E01EF25C0D00867918 /* NJSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJSquareCell.xib; sourceTree = "<group>"; };
 		BF730D671EF3DDDD00F0CB05 /* NJFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJFileTool.h; sourceTree = "<group>"; };
 		BF730D681EF3DDDD00F0CB05 /* NJFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJFileTool.m; sourceTree = "<group>"; };
+		BF79F20D1EFAA524009AD9C2 /* NJTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopic.h; sourceTree = "<group>"; };
+		BF79F20E1EFAA524009AD9C2 /* NJTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopic.m; sourceTree = "<group>"; };
 		BFA245F01EEE92A70004EE4E /* NJSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSettingVC.h; sourceTree = "<group>"; };
 		BFA245F11EEE92A70004EE4E /* NJSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSettingVC.m; sourceTree = "<group>"; };
 		BFA245F71EEEE6A30004EE4E /* NJADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJADViewController.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 		BF263EFA1EEBE61B0027FDCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF79F20D1EFAA524009AD9C2 /* NJTopic.h */,
+				BF79F20E1EFAA524009AD9C2 /* NJTopic.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1027,6 +1032,7 @@
 				BF263F341EEBE61B0027FDCB /* NJTabBarController.m in Sources */,
 				BF263F371EEBE61B0027FDCB /* AppDelegate.m in Sources */,
 				BFAA43661EF1209800611288 /* NJFastLoginView.m in Sources */,
+				BF79F20F1EFAA524009AD9C2 /* NJTopic.m in Sources */,
 				BFD644D21EF164CE00F0CF7E /* NJTextField.m in Sources */,
 				BFD644D61EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m in Sources */,
 				BFA484F91EF38395008CA502 /* NJWebVC.m in Sources */,
