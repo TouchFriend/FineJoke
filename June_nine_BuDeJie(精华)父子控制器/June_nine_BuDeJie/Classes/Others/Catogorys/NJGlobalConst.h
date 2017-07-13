@@ -18,7 +18,15 @@ UIKIT_EXTERN CGFloat const NJTitleBarHeight;
 UIKIT_EXTERN NSString * const NJTabBarButtonDidRepeatClickNotification;
 //标题栏按钮被点击的通知
 UIKIT_EXTERN NSString * const NJTitleBarButtonDidRepeatClickNotification;
-//footerView未刷新时的文字
-UIKIT_EXTERN NSString * const NJNotRefreshText;
-//footerView正在刷新时的文字
-UIKIT_EXTERN NSString * const NJisRefreshingText;
+
+//上拉可以刷新时的文字
+UIKIT_EXTERN NSString * const NJUpDragNotRefreshText;
+//上拉正在刷新时的文字
+UIKIT_EXTERN NSString * const NJisUpDragRefreshingText;
+
+//下拉可以刷新时提示的文字
+UIKIT_EXTERN NSString * const NJDownDragNotRefreshingText;
+//松开立即刷新时提示的文字
+UIKIT_EXTERN NSString * const NJDownDragCanRefreshingText;
+//下拉正在刷新时的文字
+UIKIT_EXTERN NSString * const NJisDownDragRefreshingText;
