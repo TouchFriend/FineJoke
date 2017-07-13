@@ -18,7 +18,7 @@
     
     self.view.backgroundColor = NJRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(NJNavBarMaxY + NJTitleBarHeight, 0, NJTabBarHeight, 0);
-    
+    NJFunc;
 }
 
 #pragma mark - 数据源

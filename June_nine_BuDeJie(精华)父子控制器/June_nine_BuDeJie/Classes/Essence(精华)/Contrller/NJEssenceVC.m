@@ -39,6 +39,8 @@ static NSInteger const underlineHeight = 2;
     [self setupScrollView];
     //设置标题栏
     [self setupTitleBar];
+    //添加第0个字控制器的view
+    [self addSubViewControllerView:0];
 }
 #pragma mark - 添加子控制器
 - (void)setupChildVCs
@@ -70,6 +72,7 @@ static NSInteger const underlineHeight = 2;
     contentSV.frame = self.view.bounds;
     contentSV.backgroundColor = [UIColor orangeColor];
     NSUInteger count =  self.childViewControllers.count;
+    contentSV.scrollsToTop = NO;//不需要点击状态栏回到顶部
     [self.view addSubview:contentSV];
     
     //设置scrollView的分页功能
@@ -81,17 +84,17 @@ static NSInteger const underlineHeight = 2;
     contentSV.delegate = self;
     _contentSV = contentSV;
     
-    CGFloat childVcViewW = contentSV.NJ_width;
-    CGFloat childVcViewH = contentSV.NJ_height;
-    for (NSUInteger index = 0 ; index < count; index++) {
-        //取出对应子控制器的view
-        UIView * childVcView = self.childViewControllers[index].view;
-        //设置frame
-        childVcView.frame = CGRectMake(index * childVcViewW, 0, childVcViewW, childVcViewH);
-        //添加的scrollView中
-        [contentSV addSubview:childVcView];
-    }
-    //设置contentSize
+//    CGFloat childVcViewW = contentSV.NJ_width;
+//    CGFloat childVcViewH = contentSV.NJ_height;
+//    for (NSUInteger index = 0 ; index < count; index++) {
+//        //取出对应子控制器的view
+//        UIView * childVcView = self.childViewControllers[index].view;
+//        //设置frame
+//        childVcView.frame = CGRectMake(index * childVcViewW, 0, childVcViewW, childVcViewH);
+//        //添加的scrollView中
+//        [contentSV addSubview:childVcView];
+//    }
+//    //设置contentSize
     contentSV.contentSize = CGSizeMake(count * contentSV.NJ_width, 0);
 }
 
@@ -172,7 +175,7 @@ static NSInteger const underlineHeight = 2;
     self.previousBtn.selected = NO;
     //设置点击按钮选中状态
     titleBtn.selected = YES;
-    
+    CGFloat index = titleBtn.tag;
     self.previousBtn = titleBtn;
     [UIView animateWithDuration:0.25 animations:^{
         //设置下划线width
@@ -180,9 +183,30 @@ static NSInteger const underlineHeight = 2;
         //设置下划线centerX
         self.underlineView.NJ_centerX = titleBtn.NJ_centerX;
         //联动
-        CGFloat index = titleBtn.tag;
         self.contentSV.contentOffset = CGPointMake(index * self.contentSV.NJ_width, self.contentSV.contentOffset.y);
+    } completion:^(BOOL finished) {
+        //点击标题按钮后再添加对应的子控制器的view
+        [self addSubViewControllerView:titleBtn.tag];
     }];
+    //遍历子控制器，将显示的子控制器的tableView滚回到顶部
+    NSUInteger count = self.childViewControllers.count;
+    for (NSUInteger i = 0; i < count ; i++) {
+        //取出子控制器
+        UITableViewController * childVC =  self.childViewControllers[i];
+        //判断子控制器的view是否加载过
+        if(![childVC isViewLoaded])
+        {
+            continue;//跳过
+        }
+        //取出子控制器的view
+        UIScrollView * childView = (UIScrollView *)childVC.view;
+        //判断控制器的view是否是scrollView或者scrollv的子类（tableView）
+        if(![childView isKindOfClass:[UIScrollView class]])
+        {
+            continue;
+        }
+        childView.scrollsToTop = (i == index);
+    }
     
 }
 #pragma mark - 左边按钮点击事件
@@ -222,5 +246,35 @@ static NSInteger const underlineHeight = 2;
     
     //点击对应的按钮(联动)
     [self titleBtnClick:titleBtn];
+}
+#pragma mark - 添加子控制器的view
+- (void)addSubViewControllerView:(NSUInteger)index
+{
+    //2.获取对应的控制器的view
+    UIView * subView = self.childViewControllers[index].view;
+    //如果已经加载过，则直接返回
+    //方式一
+    if(subView.superview)
+    {
+        return;
+    }
+    CGFloat contentSvWidth = self.contentSV.NJ_width;
+    subView.frame = CGRectMake(index * contentSvWidth, 0, contentSvWidth, self.contentSV.NJ_height);
+    //4.添加子view到scrollView中
+    [self.contentSV addSubview:subView];
+
+//    //方式二
+//    if(subView.window)
+//    {
+//        return;
+//    }
+    //方法三
+//    UIViewController * subVC = self.childViewControllers[index];
+//    if([subVC isViewLoaded])
+//    {
+//        return;
+//    }
+//    UIView * subView = subVC.view;
+    //3.设置frame
 }
 @end
