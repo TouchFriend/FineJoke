@@ -11,8 +11,6 @@
 @interface NJTabBar ()
 /********* 添加按钮 *********/
 @property(nonatomic,weak)UIButton * plusBtn;
-/********* 上一个被点击的TabBarButton *********/
-@property(nonatomic,weak)UIControl * previousClickedTabBarBtn;
 @end
 @implementation NJTabBar
 
@@ -41,15 +39,10 @@
     CGFloat btnH = self.NJ_height;
     CGFloat btnY = 0;
     int i = 0;
-    for (UIControl * tabBarBtn in self.subviews) {
-        //重新布局 （UITabBarButton的父类是UIControl）
+    for (UIView * tabBarBtn in self.subviews) {
+        //重新布局
         if([tabBarBtn isKindOfClass:NSClassFromString(@"UITabBarButton")])
         {
-            //如果i=0和前一个被点击的按钮为空，将第0个按钮给它赋值
-            if(i == 0 && self.previousClickedTabBarBtn == nil)
-            {
-                self.previousClickedTabBarBtn = tabBarBtn;
-            }
             //留出空位
             if(i == (count / 2))
             {
@@ -58,20 +51,10 @@
             CGFloat btnX = i * btnW;
             tabBarBtn.frame = CGRectMake(btnX, btnY, btnW, btnH);
             i++;
-            [tabBarBtn addTarget:self action:@selector(tabBarBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            
         }
     }
     //设置plus按钮位置
     self.plusBtn.center = CGPointMake(self.NJ_width * 0.5, self.NJ_height * 0.5);
 }
-#pragma mark - 点击tabBarBtn
-- (void)tabBarBtnClick:(UIControl *)tabBarBtn
-{
-    if(self.previousClickedTabBarBtn == tabBarBtn)
-    {
-       NJFunc;
-    }
-    self.previousClickedTabBarBtn = tabBarBtn;
-}
+
 @end
