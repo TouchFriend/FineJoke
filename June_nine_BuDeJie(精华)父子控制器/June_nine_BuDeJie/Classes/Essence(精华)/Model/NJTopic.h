@@ -7,6 +7,7 @@
 //
 typedef NS_ENUM(NSInteger,NJTopicType)
 {
+    NJTopicTypeAll = 1,//全部
     NJTopicTypePicture = 10,//图片
     NJTopicTypeWord = 29,//段子
     NJTopicTypeVoice = 31,//音频

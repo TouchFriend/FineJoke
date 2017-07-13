@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NJVideoVC : UITableViewController
+#import "NJTopicVC.h"
+@interface NJVideoVC : NJTopicVC
 
 @end

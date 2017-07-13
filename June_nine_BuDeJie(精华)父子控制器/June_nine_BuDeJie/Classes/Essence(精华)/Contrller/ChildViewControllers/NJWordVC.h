@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NJWordVC : UITableViewController
+#import "NJTopicVC.h"
+@interface NJWordVC : NJTopicVC
 
 @end

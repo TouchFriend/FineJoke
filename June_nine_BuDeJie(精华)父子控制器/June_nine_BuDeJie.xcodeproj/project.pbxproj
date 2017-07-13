@@ -58,6 +58,7 @@
 		BFAA43661EF1209800611288 /* NJFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA43651EF1209800611288 /* NJFastLoginView.m */; };
 		BFAA43681EF120A800611288 /* NJFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAA43671EF120A800611288 /* NJFastLoginView.xib */; };
 		BFAA436C1EF1360A00611288 /* NJFastLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA436B1EF1360A00611288 /* NJFastLoginButton.m */; };
+		BFB5BBDD1F16177500C295D7 /* NJTopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB5BBDC1F16177500C295D7 /* NJTopicVC.m */; };
 		BFC05AC91EEE29BE0025F5CE /* NJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC05AC81EEE29BE0025F5CE /* NJTabBar.m */; };
 		BFC05ACC1EEE69F80025F5CE /* UIView+NJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC05ACB1EEE69F80025F5CE /* UIView+NJFrame.m */; };
 		BFC05AD01EEE6DBA0025F5CE /* NJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC05ACF1EEE6DBA0025F5CE /* NJNavigationBar.m */; };
@@ -179,6 +180,8 @@
 		BFAA43671EF120A800611288 /* NJFastLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJFastLoginView.xib; sourceTree = "<group>"; };
 		BFAA436A1EF1360A00611288 /* NJFastLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJFastLoginButton.h; sourceTree = "<group>"; };
 		BFAA436B1EF1360A00611288 /* NJFastLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJFastLoginButton.m; sourceTree = "<group>"; };
+		BFB5BBDB1F16177500C295D7 /* NJTopicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopicVC.h; sourceTree = "<group>"; };
+		BFB5BBDC1F16177500C295D7 /* NJTopicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicVC.m; sourceTree = "<group>"; };
 		BFC05AC71EEE29BD0025F5CE /* NJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTabBar.h; sourceTree = "<group>"; };
 		BFC05AC81EEE29BE0025F5CE /* NJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTabBar.m; sourceTree = "<group>"; };
 		BFC05ACA1EEE69F80025F5CE /* UIView+NJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NJFrame.h"; sourceTree = "<group>"; };
@@ -876,6 +879,8 @@
 		BFF170CB1EF776E0007655FD /* ChildViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFB5BBDB1F16177500C295D7 /* NJTopicVC.h */,
+				BFB5BBDC1F16177500C295D7 /* NJTopicVC.m */,
 				BFF170CC1EF776FE007655FD /* NJAllVC.h */,
 				BFF170CD1EF776FE007655FD /* NJAllVC.m */,
 				BFF170CF1EF77727007655FD /* NJVideoVC.h */,
@@ -1133,6 +1138,7 @@
 				BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */,
 				BFF7CB8F1F00A11700A46971 /* NJTopicPictureView.m in Sources */,
 				BFC05AD31EEE70940025F5CE /* UIBarButtonItem+NJItem.m in Sources */,
+				BFB5BBDD1F16177500C295D7 /* NJTopicVC.m in Sources */,
 				BF263F3A1EEBE61B0027FDCB /* UIImage+NJImage.m in Sources */,
 				BFF7CB941F00A13500A46971 /* NJTopicVoiceView.m in Sources */,
 				BF263F3C1EEBE61B0027FDCB /* UIColor+Hex.m in Sources */,

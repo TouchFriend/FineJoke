@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSUInteger,NJHellow)
-{
-    NJHellowAll = 1,
-};
-@interface NJAllVC : UITableViewController
+#import "NJTopicVC.h"
+@interface NJAllVC : NJTopicVC
 
 @end
