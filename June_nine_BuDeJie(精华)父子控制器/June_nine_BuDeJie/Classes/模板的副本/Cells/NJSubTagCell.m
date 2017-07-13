@@ -9,6 +9,7 @@
 #import "NJSubTagCell.h"
 #import "NJSubTagItem.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+NJDownload.h"
 @interface NJSubTagCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *subTagImageV;
 @property (weak, nonatomic) IBOutlet UILabel *tagNameLabel;
@@ -36,8 +37,7 @@
 {
     _item = item;
     //1.设置图片
-    NSURL * imageUrl = [NSURL URLWithString:item.image_list];
-    [self.subTagImageV sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.subTagImageV setHeaderImage:item.image_list];
     //2.设置标签名称
     self.tagNameLabel.text = item.theme_name;
     //3.设置订阅数

@@ -25,6 +25,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleBarButtonDidRepeatClick) name:NJTitleBarButtonDidRepeatClickNotification object:nil];
     //设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    //设置tableView的背景色
+    self.tableView.backgroundColor = NJColor(216, 216, 216);
+    //隐藏分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 #pragma mark - 标题栏按钮被点击
 - (void)titleBarButtonDidRepeatClick

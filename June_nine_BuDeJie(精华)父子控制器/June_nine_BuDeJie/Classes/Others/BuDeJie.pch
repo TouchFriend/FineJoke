@@ -20,18 +20,19 @@
 //数据保存为plist
 //#abc == "abc"
 #define NJDataWriteToPlist(plistName) [responseObject writeToFile:[NSString stringWithFormat:@"/Users/TouchWorld/desktop/%@.plist",@#plistName] atomically:YES]
-/***************设置颜色*********************/
+/*************** 设置颜色 *********************/
 #define NJRandomColor NJColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
 #define NJColor(r,g,b) [UIColor colorWithRed:(r) / 256.0 green:(g) / 256.0 blue:(b) / 256.0 alpha:1.0]
-/***************设置颜色*********************/
-/***************屏幕适配*********************/
+/*************** 设置颜色 *********************/
+/*************** 屏幕适配 *********************/
 #define NJScreenW [UIScreen mainScreen].bounds.size.width
 #define NJScreenH [UIScreen mainScreen].bounds.size.height
 #define iphone6P (NJScreenH == 736)
 #define iphone6 (NJScreenH == 667)
 #define iphone5 (NJScreenH == 568)
 #define iphone4 (NJScreenH == 480)
-/***************屏幕适配*********************/
+/*************** 屏幕适配 *********************/
+
 #ifdef DEBUG // 调试
 
 #define NJLog(...) NSLog(__VA_ARGS__)

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "NJADViewController.h"
 #import "NJTabBarController.h"
-
+#import <AFNetworkReachabilityManager.h>
 @interface AppDelegate ()
 
 @end
@@ -40,6 +40,8 @@
     self.window.rootViewController = tabBarController;
     //3.显示窗口
     [self.window makeKeyAndVisible];
+    //4.开始监听网络状态
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     return YES;
 }
 

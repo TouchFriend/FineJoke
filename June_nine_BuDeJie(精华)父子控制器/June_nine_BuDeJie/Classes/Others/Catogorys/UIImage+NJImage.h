@@ -11,4 +11,6 @@
 @interface UIImage (NJImage)
 //返回不被渲染的图片，更改图片的渲染模式
 + (UIImage *)imageOriginNamed:(NSString *)imageName;
+- (UIImage *)NJOricalImage;
++ (UIImage *)NJOricalImageWithName:(NSString *)imageName;
 @end

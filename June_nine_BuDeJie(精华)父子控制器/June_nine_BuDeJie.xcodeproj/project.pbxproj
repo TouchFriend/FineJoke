@@ -32,6 +32,7 @@
 		BF6B62DC1EF25A8100867918 /* NJSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DB1EF25A8100867918 /* NJSquareItem.m */; };
 		BF6B62E11EF25C0D00867918 /* NJSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DF1EF25C0D00867918 /* NJSquareCell.m */; };
 		BF6B62E21EF25C0D00867918 /* NJSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6B62E01EF25C0D00867918 /* NJSquareCell.xib */; };
+		BF71DE2D1EFE45C3008E68FC /* NJTopicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71DE2C1EFE45C3008E68FC /* NJTopicFrame.m */; };
 		BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF730D681EF3DDDD00F0CB05 /* NJFileTool.m */; };
 		BF79F20F1EFAA524009AD9C2 /* NJTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79F20E1EFAA524009AD9C2 /* NJTopic.m */; };
 		BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F11EEE92A70004EE4E /* NJSettingVC.m */; };
@@ -62,12 +63,21 @@
 		BFC5EA6A1EF63E9500E43A36 /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC5EA691EF63E9500E43A36 /* NJTitleButton.m */; };
 		BFD644D21EF164CE00F0CF7E /* NJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD644D11EF164CE00F0CF7E /* NJTextField.m */; };
 		BFD644D61EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD644D51EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m */; };
+		BFD6D4291F0357AF00D5A67F /* UIImageView+NJDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D4281F0357AF00D5A67F /* UIImageView+NJDownload.m */; };
 		BFF170CE1EF776FE007655FD /* NJAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170CD1EF776FE007655FD /* NJAllVC.m */; };
 		BFF170D11EF77727007655FD /* NJVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D01EF77727007655FD /* NJVideoVC.m */; };
 		BFF170D41EF77736007655FD /* NJVoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D31EF77736007655FD /* NJVoiceVC.m */; };
 		BFF170D71EF77743007655FD /* NJPictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D61EF77743007655FD /* NJPictureVC.m */; };
 		BFF170DA1EF77751007655FD /* NJWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D91EF77751007655FD /* NJWordVC.m */; };
 		BFF170DD1EF79EE4007655FD /* NJGlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170DC1EF79EE4007655FD /* NJGlobalConst.m */; };
+		BFF7CB8A1F00A0DD00A46971 /* NJTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF7CB881F00A0DD00A46971 /* NJTopicCell.m */; };
+		BFF7CB8B1F00A0DD00A46971 /* NJTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF7CB891F00A0DD00A46971 /* NJTopicCell.xib */; };
+		BFF7CB8F1F00A11700A46971 /* NJTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF7CB8E1F00A11700A46971 /* NJTopicPictureView.m */; };
+		BFF7CB941F00A13500A46971 /* NJTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF7CB931F00A13500A46971 /* NJTopicVoiceView.m */; };
+		BFF7CB971F00A14700A46971 /* NJTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF7CB961F00A14700A46971 /* NJTopicVideoView.m */; };
+		BFF7CB9A1F00A16800A46971 /* NJTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF7CB981F00A16800A46971 /* NJTopicVoiceView.xib */; };
+		BFF7CB9B1F00A16800A46971 /* NJTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF7CB991F00A16800A46971 /* NJTopicVideoView.xib */; };
+		BFF7CBA31F00A87900A46971 /* NJTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF7CBA21F00A87900A46971 /* NJTopicPictureView.xib */; };
 		C41C7610C4BF64DA8F721CE5 /* libPods-June_nine_BuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF800F2CCFC005A7DE2A973 /* libPods-June_nine_BuDeJie.a */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +140,8 @@
 		BF6B62DE1EF25C0D00867918 /* NJSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSquareCell.h; sourceTree = "<group>"; };
 		BF6B62DF1EF25C0D00867918 /* NJSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSquareCell.m; sourceTree = "<group>"; };
 		BF6B62E01EF25C0D00867918 /* NJSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJSquareCell.xib; sourceTree = "<group>"; };
+		BF71DE2B1EFE45C3008E68FC /* NJTopicFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopicFrame.h; sourceTree = "<group>"; };
+		BF71DE2C1EFE45C3008E68FC /* NJTopicFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicFrame.m; sourceTree = "<group>"; };
 		BF730D671EF3DDDD00F0CB05 /* NJFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJFileTool.h; sourceTree = "<group>"; };
 		BF730D681EF3DDDD00F0CB05 /* NJFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJFileTool.m; sourceTree = "<group>"; };
 		BF79F20D1EFAA524009AD9C2 /* NJTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopic.h; sourceTree = "<group>"; };
@@ -177,6 +189,8 @@
 		BFD644D11EF164CE00F0CF7E /* NJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTextField.m; sourceTree = "<group>"; };
 		BFD644D41EF16C9500F0CF7E /* UITextField+NJPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NJPlaceHolder.h"; sourceTree = "<group>"; };
 		BFD644D51EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NJPlaceHolder.m"; sourceTree = "<group>"; };
+		BFD6D4271F0357AF00D5A67F /* UIImageView+NJDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+NJDownload.h"; sourceTree = "<group>"; };
+		BFD6D4281F0357AF00D5A67F /* UIImageView+NJDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+NJDownload.m"; sourceTree = "<group>"; };
 		BFF170CC1EF776FE007655FD /* NJAllVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJAllVC.h; sourceTree = "<group>"; };
 		BFF170CD1EF776FE007655FD /* NJAllVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJAllVC.m; sourceTree = "<group>"; };
 		BFF170CF1EF77727007655FD /* NJVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJVideoVC.h; sourceTree = "<group>"; };
@@ -189,6 +203,20 @@
 		BFF170D91EF77751007655FD /* NJWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJWordVC.m; sourceTree = "<group>"; };
 		BFF170DB1EF79EE4007655FD /* NJGlobalConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJGlobalConst.h; path = Catogorys/NJGlobalConst.h; sourceTree = "<group>"; };
 		BFF170DC1EF79EE4007655FD /* NJGlobalConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJGlobalConst.m; path = Catogorys/NJGlobalConst.m; sourceTree = "<group>"; };
+		BFF7CB871F00A0DD00A46971 /* NJTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopicCell.h; sourceTree = "<group>"; };
+		BFF7CB881F00A0DD00A46971 /* NJTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicCell.m; sourceTree = "<group>"; };
+		BFF7CB891F00A0DD00A46971 /* NJTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTopicCell.xib; sourceTree = "<group>"; };
+		BFF7CB8D1F00A11700A46971 /* NJTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopicPictureView.h; sourceTree = "<group>"; };
+		BFF7CB8E1F00A11700A46971 /* NJTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicPictureView.m; sourceTree = "<group>"; };
+		BFF7CB921F00A13500A46971 /* NJTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopicVoiceView.h; sourceTree = "<group>"; };
+		BFF7CB931F00A13500A46971 /* NJTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicVoiceView.m; sourceTree = "<group>"; };
+		BFF7CB951F00A14700A46971 /* NJTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopicVideoView.h; sourceTree = "<group>"; };
+		BFF7CB961F00A14700A46971 /* NJTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicVideoView.m; sourceTree = "<group>"; };
+		BFF7CB981F00A16800A46971 /* NJTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTopicVoiceView.xib; sourceTree = "<group>"; };
+		BFF7CB991F00A16800A46971 /* NJTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTopicVideoView.xib; sourceTree = "<group>"; };
+		BFF7CB9C1F00A2C800A46971 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BFF7CB9D1F00A2C800A46971 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		BFF7CBA21F00A87900A46971 /* NJTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJTopicPictureView.xib; sourceTree = "<group>"; };
 		F9F50A6ECE431625E2664CEA /* Pods-June_nine_BuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-June_nine_BuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-June_nine_BuDeJie/Pods-June_nine_BuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,6 +316,8 @@
 			children = (
 				BF79F20D1EFAA524009AD9C2 /* NJTopic.h */,
 				BF79F20E1EFAA524009AD9C2 /* NJTopic.m */,
+				BF71DE2B1EFE45C3008E68FC /* NJTopicFrame.h */,
+				BF71DE2C1EFE45C3008E68FC /* NJTopicFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +325,8 @@
 		BF263EFB1EEBE61B0027FDCB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFF7CB8C1F00A0F100A46971 /* middleView */,
+				BFF7CB861F00A0DD00A46971 /* cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,6 +502,8 @@
 				BFC05AD21EEE70940025F5CE /* UIBarButtonItem+NJItem.m */,
 				BFD644D41EF16C9500F0CF7E /* UITextField+NJPlaceHolder.h */,
 				BFD644D51EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m */,
+				BFD6D4271F0357AF00D5A67F /* UIImageView+NJDownload.h */,
+				BFD6D4281F0357AF00D5A67F /* UIImageView+NJDownload.m */,
 			);
 			path = Catogorys;
 			sourceTree = "<group>";
@@ -848,6 +882,32 @@
 			path = ChildViewControllers;
 			sourceTree = "<group>";
 		};
+		BFF7CB861F00A0DD00A46971 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7CB871F00A0DD00A46971 /* NJTopicCell.h */,
+				BFF7CB881F00A0DD00A46971 /* NJTopicCell.m */,
+				BFF7CB891F00A0DD00A46971 /* NJTopicCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		BFF7CB8C1F00A0F100A46971 /* middleView */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7CB8D1F00A11700A46971 /* NJTopicPictureView.h */,
+				BFF7CB8E1F00A11700A46971 /* NJTopicPictureView.m */,
+				BFF7CBA21F00A87900A46971 /* NJTopicPictureView.xib */,
+				BFF7CB921F00A13500A46971 /* NJTopicVoiceView.h */,
+				BFF7CB931F00A13500A46971 /* NJTopicVoiceView.m */,
+				BFF7CB981F00A16800A46971 /* NJTopicVoiceView.xib */,
+				BFF7CB951F00A14700A46971 /* NJTopicVideoView.h */,
+				BFF7CB961F00A14700A46971 /* NJTopicVideoView.m */,
+				BFF7CB991F00A16800A46971 /* NJTopicVideoView.xib */,
+			);
+			path = middleView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -917,7 +977,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = BF4B9BBE1EEAC5BB0071D386;
@@ -937,15 +996,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF263F391EEBE61B0027FDCB /* Main.storyboard in Resources */,
+				BFF7CB9A1F00A16800A46971 /* NJTopicVoiceView.xib in Resources */,
 				BFA246271EEEE95F0004EE4E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				BF6B62E21EF25C0D00867918 /* NJSquareCell.xib in Resources */,
 				BFAA43531EF1029200611288 /* NJFriendTrendVC.xib in Resources */,
 				BF47B7B61EEFF65700075AB2 /* NJSubTagVC.xib in Resources */,
+				BFF7CB9B1F00A16800A46971 /* NJTopicVideoView.xib in Resources */,
+				BFF7CB8B1F00A0DD00A46971 /* NJTopicCell.xib in Resources */,
 				BF263F381EEBE61B0027FDCB /* LaunchScreen.storyboard in Resources */,
 				BF6B62D91EF230C600867918 /* NJMeVC.storyboard in Resources */,
 				BFA246291EEEE95F0004EE4E /* LaunchImage@2x.png in Resources */,
 				BF1DFE921EEFFFAB004C9C1F /* NJSubTagCell.xib in Resources */,
 				BFA246241EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png in Resources */,
+				BFF7CBA31F00A87900A46971 /* NJTopicPictureView.xib in Resources */,
 				BFAA43681EF120A800611288 /* NJFastLoginView.xib in Resources */,
 				BFAA435C1EF1069F00611288 /* NJLoginRegisterVC.xib in Resources */,
 				BFAA43621EF10D5000611288 /* NJLoginRegisterView.xib in Resources */,
@@ -1044,18 +1107,24 @@
 				BF47B7AD1EEFAF6900075AB2 /* NJADItem.m in Sources */,
 				BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */,
 				BF1DFE911EEFFFAB004C9C1F /* NJSubTagCell.m in Sources */,
+				BFF7CB8A1F00A0DD00A46971 /* NJTopicCell.m in Sources */,
 				BFF170D11EF77727007655FD /* NJVideoVC.m in Sources */,
 				BF1DFE8C1EEFFA82004C9C1F /* NJSubTagItem.m in Sources */,
+				BFD6D4291F0357AF00D5A67F /* UIImageView+NJDownload.m in Sources */,
+				BFF7CB971F00A14700A46971 /* NJTopicVideoView.m in Sources */,
 				BF263F311EEBE61B0027FDCB /* NJEssenceVC.m in Sources */,
 				BFAA436C1EF1360A00611288 /* NJFastLoginButton.m in Sources */,
+				BF71DE2D1EFE45C3008E68FC /* NJTopicFrame.m in Sources */,
 				BFAA435B1EF1069F00611288 /* NJLoginRegisterVC.m in Sources */,
 				BFC05AC91EEE29BE0025F5CE /* NJTabBar.m in Sources */,
 				BF50DEBA1EEE87960073ABAF /* NJNavigationVC.m in Sources */,
 				BFF170DA1EF77751007655FD /* NJWordVC.m in Sources */,
 				BFF170DD1EF79EE4007655FD /* NJGlobalConst.m in Sources */,
 				BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */,
+				BFF7CB8F1F00A11700A46971 /* NJTopicPictureView.m in Sources */,
 				BFC05AD31EEE70940025F5CE /* UIBarButtonItem+NJItem.m in Sources */,
 				BF263F3A1EEBE61B0027FDCB /* UIImage+NJImage.m in Sources */,
+				BFF7CB941F00A13500A46971 /* NJTopicVoiceView.m in Sources */,
 				BF263F3C1EEBE61B0027FDCB /* UIColor+Hex.m in Sources */,
 				BFA245F91EEEE6A30004EE4E /* NJADViewController.m in Sources */,
 				BFC05AD01EEE6DBA0025F5CE /* NJNavigationBar.m in Sources */,
@@ -1086,6 +1155,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF263F1A1EEBE61B0027FDCB /* Base */,
+				BFF7CB9C1F00A2C800A46971 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1094,6 +1164,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF263F1C1EEBE61B0027FDCB /* Base */,
+				BFF7CB9D1F00A2C800A46971 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1105,6 +1176,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1153,6 +1225,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

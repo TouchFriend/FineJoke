@@ -29,4 +29,6 @@ NSString * const NJDownDragNotRefreshingText = @"下拉可以刷新";
 NSString * const NJDownDragCanRefreshingText = @"松开立即刷新";
 //下拉正在刷新时的文字
 NSString * const NJisDownDragRefreshingText = @"正在刷新数据中";
+//cell的间距（margin）
+CGFloat const NJCellMargin = 10;
 /*************** 精华控制器 ********************/

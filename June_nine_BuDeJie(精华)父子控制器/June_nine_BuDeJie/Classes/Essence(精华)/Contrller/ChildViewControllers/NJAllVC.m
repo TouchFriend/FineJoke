@@ -11,7 +11,8 @@
 #import "NJTopic.h"
 #import <MJExtension/MJExtension.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-
+#import "NJTopicCell.h"
+#define NJMargin 10
 @interface NJAllVC ()
 /********* maxtime(当前最后一条帖子的描述信息) *********/
 @property(nonatomic,strong)NSString * maxtime;
@@ -41,11 +42,10 @@
 @end
 
 @implementation NJAllVC
-
+static NSString * const ID = @"NJTopicCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //请求数据
-    self.tableView.backgroundColor = NJRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(NJNavBarMaxY + NJTitleBarHeight, 0, NJTabBarHeight, 0);
     //监听TabBarButton被重复点击的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:NJTabBarButtonDidRepeatClickNotification object:nil];
@@ -56,7 +56,15 @@
     
     //设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    //注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([NJTopicCell class]) bundle:nil] forCellReuseIdentifier:ID];
+    //设置tableView的背景色
+    self.tableView.backgroundColor = NJColor(215, 215, 215);
+    //隐藏分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.allowsSelection = NO;
 }
+
 #pragma mark - 懒加载
 - (AFHTTPSessionManager *)manager
 {
@@ -96,18 +104,19 @@
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @"31";//音频
+    parameters[@"type"] = @(NJTopicTypeVideo);//音频
     //发送请求
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
         //存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
         //数据转模型
         self.topicsArrM = [NJTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+//        NJDataWriteToPlist(@"ttt");
         //刷新表格
         [self.tableView reloadData];
         //结束刷新
         [self endDownDragRefreshing];
-        NJLog(@"请求成功");
+//        NJLog(@"请求成功");
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NJLog(@"%@",error);
         //不是取消请求的错误，而是其他原因导致的错误 NSURLErrorDomain
@@ -118,7 +127,6 @@
         }
         //结束刷新
         [self endDownDragRefreshing];
-        
     }];
 }
 /*
@@ -132,7 +140,7 @@
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @"31";//音频
+    parameters[@"type"] = @(NJTopicTypeVideo);//音频
     parameters[@"maxtime"] = self.maxtime;
     //发送请求
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
@@ -146,7 +154,7 @@
         [self.tableView reloadData];
         //结束刷新
         [self endUpDragRefreshing];
-        NJLog(@"请求成功");
+//        NJLog(@"请求成功");
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NJLog(@"%@",error);
         if(error.code != -999)
@@ -240,16 +248,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor clearColor];
-    }
+    NJTopicCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
     //取出对应的模型
     NJTopic * topic = self.topicsArrM[indexPath.row];
-    cell.textLabel.text = topic.name;
+    //设置对应的数据
+    cell.topic = topic;
+//    NJLog(@"%ld,%p",indexPath.row,cell);
     return cell;
+}
+#pragma mark - 代理方法
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    NJLog(@"%ld--%s",indexPath.row,__func__);
+    //取出对应的数据模型
+    NJTopic * topic = self.topicsArrM[indexPath.row];
+    return topic.cellHeight;
 }
 #pragma mark - dealloc
 - (void)dealloc
@@ -337,7 +350,7 @@
     }];
     //发送请求,加载新数据
     [self loadNewTopics];
-    NSLog(@"下拉刷新，加载新的数据");
+//    NSLog(@"下拉刷新，加载新的数据");
 
 }
 #pragma mark - 结束下拉刷新
@@ -360,7 +373,7 @@
     {
         return;
     }
-    NJLog(@"上拉刷新，加载更多数据");
+//    NJLog(@"上拉刷新，加载更多数据");
     //正在刷新中
     self.upDragrefreshStatus = YES;
     self.footerLable.text = NJisUpDragRefreshingText;
@@ -375,4 +388,5 @@
     //更改文字
     self.footerLable.text = NJUpDragNotRefreshText;
 }
+
 @end
