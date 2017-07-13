@@ -28,6 +28,7 @@
 		BF4B9BE51EEAC5BB0071D386 /* June_nine_BuDeJieUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B9BE41EEAC5BB0071D386 /* June_nine_BuDeJieUITests.m */; };
 		BF4C28451EF0149E0062E358 /* NJSubTagsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C28441EF0149E0062E358 /* NJSubTagsVC.m */; };
 		BF50DEBA1EEE87960073ABAF /* NJNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF50DEB91EEE87960073ABAF /* NJNavigationVC.m */; };
+		BF5118F31F167B3E0075FE87 /* NJChibaoGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5118F21F167B3E0075FE87 /* NJChibaoGifHeader.m */; };
 		BF6B62D91EF230C600867918 /* NJMeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6B62D81EF230C600867918 /* NJMeVC.storyboard */; };
 		BF6B62DC1EF25A8100867918 /* NJSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DB1EF25A8100867918 /* NJSquareItem.m */; };
 		BF6B62E11EF25C0D00867918 /* NJSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DF1EF25C0D00867918 /* NJSquareCell.m */; };
@@ -137,6 +138,8 @@
 		BF50DEB81EEE87960073ABAF /* NJNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJNavigationVC.h; path = "../../Essence(精华)/Contrller/NJNavigationVC.h"; sourceTree = "<group>"; };
 		BF50DEB91EEE87960073ABAF /* NJNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJNavigationVC.m; path = "../../Essence(精华)/Contrller/NJNavigationVC.m"; sourceTree = "<group>"; };
 		BF50DEBB1EEE899C0073ABAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF5118F11F167B3E0075FE87 /* NJChibaoGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJChibaoGifHeader.h; sourceTree = "<group>"; };
+		BF5118F21F167B3E0075FE87 /* NJChibaoGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJChibaoGifHeader.m; sourceTree = "<group>"; };
 		BF6B62D81EF230C600867918 /* NJMeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJMeVC.storyboard; sourceTree = "<group>"; };
 		BF6B62DA1EF25A8100867918 /* NJSquareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSquareItem.h; sourceTree = "<group>"; };
 		BF6B62DB1EF25A8100867918 /* NJSquareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSquareItem.m; sourceTree = "<group>"; };
@@ -592,6 +595,8 @@
 			isa = PBXGroup;
 			children = (
 				BF47B7B41EEFF65700075AB2 /* NJSubTagVC.xib */,
+				BF5118F11F167B3E0075FE87 /* NJChibaoGifHeader.h */,
+				BF5118F21F167B3E0075FE87 /* NJChibaoGifHeader.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1109,6 +1114,7 @@
 				BF263F341EEBE61B0027FDCB /* NJTabBarController.m in Sources */,
 				BF263F371EEBE61B0027FDCB /* AppDelegate.m in Sources */,
 				BFAA43661EF1209800611288 /* NJFastLoginView.m in Sources */,
+				BF5118F31F167B3E0075FE87 /* NJChibaoGifHeader.m in Sources */,
 				BF79F20F1EFAA524009AD9C2 /* NJTopic.m in Sources */,
 				BFD644D21EF164CE00F0CF7E /* NJTextField.m in Sources */,
 				BFD644D61EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m in Sources */,
