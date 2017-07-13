@@ -11,6 +11,7 @@
 #import "NJTopic.h"
 #import "UIImageView+NJDownload.h"
 #import <UIImage+GIF.h>
+#import "NJSeeBigPictureVC.h"
 @interface NJTopicPictureView ()
 @property (weak, nonatomic) IBOutlet UIImageView *topicImageV;
 @property (weak, nonatomic) IBOutlet UIImageView *gifImageV;
@@ -23,6 +24,9 @@
 {
     [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showBigPicture)];
+    [self addGestureRecognizer:tapGesture];
 }
 - (void)setTopic:(NJTopic *)topic
 {
@@ -67,5 +71,12 @@
         self.topicImageV.clipsToBounds = NO;
     }
 }
-
+#pragma mark - 点击查看大图
+- (void)showBigPicture
+{
+    NJSeeBigPictureVC * seeBigPictureVC = [[NJSeeBigPictureVC alloc]init];
+    seeBigPictureVC.topic = self.topic;//传递模型
+    [self.window.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+//    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+}
 @end

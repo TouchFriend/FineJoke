@@ -55,7 +55,6 @@ static NSString * const ID = @"NJTopicCellID";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleBarButtonDidRepeatClick) name:NJTitleBarButtonDidRepeatClickNotification object:nil];
     //设置刷新
     [self setupRefresh];
-    
     //设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     //注册cell
@@ -106,7 +105,7 @@ static NSString * const ID = @"NJTopicCellID";
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(NJTopicTypePicture);//音频
+    parameters[@"type"] = @(NJTopicTypeVoice);//音频
     //发送请求
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
         //存储maxtime
@@ -142,7 +141,7 @@ static NSString * const ID = @"NJTopicCellID";
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(NJTopicTypePicture);//音频
+    parameters[@"type"] = @(NJTopicTypeVoice);//音频
     parameters[@"maxtime"] = self.maxtime;
     //发送请求
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {

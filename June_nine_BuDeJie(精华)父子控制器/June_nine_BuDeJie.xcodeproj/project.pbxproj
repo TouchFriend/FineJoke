@@ -34,6 +34,8 @@
 		BF6B62E21EF25C0D00867918 /* NJSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6B62E01EF25C0D00867918 /* NJSquareCell.xib */; };
 		BF71DE2D1EFE45C3008E68FC /* NJTopicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71DE2C1EFE45C3008E68FC /* NJTopicFrame.m */; };
 		BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF730D681EF3DDDD00F0CB05 /* NJFileTool.m */; };
+		BF79CB1D1F04EACD00628B84 /* NJSeeBigPictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79CB1B1F04EACD00628B84 /* NJSeeBigPictureVC.m */; };
+		BF79CB1E1F04EACD00628B84 /* NJSeeBigPictureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF79CB1C1F04EACD00628B84 /* NJSeeBigPictureVC.xib */; };
 		BF79F20F1EFAA524009AD9C2 /* NJTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79F20E1EFAA524009AD9C2 /* NJTopic.m */; };
 		BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F11EEE92A70004EE4E /* NJSettingVC.m */; };
 		BFA245F91EEEE6A30004EE4E /* NJADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F81EEEE6A30004EE4E /* NJADViewController.m */; };
@@ -144,6 +146,9 @@
 		BF71DE2C1EFE45C3008E68FC /* NJTopicFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopicFrame.m; sourceTree = "<group>"; };
 		BF730D671EF3DDDD00F0CB05 /* NJFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJFileTool.h; sourceTree = "<group>"; };
 		BF730D681EF3DDDD00F0CB05 /* NJFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJFileTool.m; sourceTree = "<group>"; };
+		BF79CB1A1F04EACD00628B84 /* NJSeeBigPictureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSeeBigPictureVC.h; sourceTree = "<group>"; };
+		BF79CB1B1F04EACD00628B84 /* NJSeeBigPictureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSeeBigPictureVC.m; sourceTree = "<group>"; };
+		BF79CB1C1F04EACD00628B84 /* NJSeeBigPictureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJSeeBigPictureVC.xib; sourceTree = "<group>"; };
 		BF79F20D1EFAA524009AD9C2 /* NJTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTopic.h; sourceTree = "<group>"; };
 		BF79F20E1EFAA524009AD9C2 /* NJTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTopic.m; sourceTree = "<group>"; };
 		BFA245F01EEE92A70004EE4E /* NJSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSettingVC.h; sourceTree = "<group>"; };
@@ -852,6 +857,9 @@
 			children = (
 				BFC5EA681EF63E9500E43A36 /* NJTitleButton.h */,
 				BFC5EA691EF63E9500E43A36 /* NJTitleButton.m */,
+				BF79CB1A1F04EACD00628B84 /* NJSeeBigPictureVC.h */,
+				BF79CB1B1F04EACD00628B84 /* NJSeeBigPictureVC.m */,
+				BF79CB1C1F04EACD00628B84 /* NJSeeBigPictureVC.xib */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1019,6 +1027,7 @@
 				BFA245FD1EEEE90E0004EE4E /* Assets.xcassets in Resources */,
 				BFA246251EEEE95F0004EE4E /* LaunchImage-700@2x.png in Resources */,
 				BFA245FB1EEEE6AE0004EE4E /* NJADViewController.xib in Resources */,
+				BF79CB1E1F04EACD00628B84 /* NJSeeBigPictureVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,6 +1129,7 @@
 				BF50DEBA1EEE87960073ABAF /* NJNavigationVC.m in Sources */,
 				BFF170DA1EF77751007655FD /* NJWordVC.m in Sources */,
 				BFF170DD1EF79EE4007655FD /* NJGlobalConst.m in Sources */,
+				BF79CB1D1F04EACD00628B84 /* NJSeeBigPictureVC.m in Sources */,
 				BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */,
 				BFF7CB8F1F00A11700A46971 /* NJTopicPictureView.m in Sources */,
 				BFC05AD31EEE70940025F5CE /* UIBarButtonItem+NJItem.m in Sources */,

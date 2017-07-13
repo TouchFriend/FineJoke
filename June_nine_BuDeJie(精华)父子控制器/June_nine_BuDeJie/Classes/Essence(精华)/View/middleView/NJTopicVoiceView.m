@@ -11,6 +11,7 @@
 #import <AFNetworking.h>
 #import "NJTopic.h"
 #import "UIImageView+NJDownload.h"
+#import "NJSeeBigPictureVC.h"
 @interface NJTopicVoiceView ()
 @property (weak, nonatomic) IBOutlet UIImageView *topicImageV;
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
@@ -24,6 +25,9 @@
 {
     [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showBigPicture)];
+    [self addGestureRecognizer:tapGesture];
 }
 - (void)setTopic:(NJTopic *)topic
 {
@@ -49,5 +53,13 @@
     }
     //播放时长
     self.timeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld",topic.voicetime / 60,topic.voicetime % 60];
+}
+#pragma mark - 点击查看大图
+- (void)showBigPicture
+{
+    NJSeeBigPictureVC * seeBigPictureVC = [[NJSeeBigPictureVC alloc]init];
+    seeBigPictureVC.topic = self.topic;//传递模型
+    [self.window.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+    //    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
 }
 @end

@@ -18,7 +18,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BVO-xd-AoH">
                     <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Uk-a3x">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Uk-a3x">
                     <rect key="frame" x="0.0" y="181" width="254" height="43"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="DJM-eC-xqm"/>
