@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9ZH-n9-A1u" customClass="NJTopicVideoView">
+            <rect key="frame" x="0.0" y="0.0" width="234" height="238"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGl-it-3fJ">
+                    <rect key="frame" x="0.0" y="0.0" width="234" height="238"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="423播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAX-1F-giD" userLabel="playCount">
+                    <rect key="frame" x="175.5" y="0.0" width="58.5" height="18"/>
+                    <color key="backgroundColor" red="0.56103267769999998" green="0.56103267769999998" blue="0.56103267769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-kw-26C" userLabel="time">
+                    <rect key="frame" x="195.5" y="220" width="38.5" height="18"/>
+                    <color key="backgroundColor" red="0.56103267769999998" green="0.56103267769999998" blue="0.56103267769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKj-3G-ECF">
+                    <rect key="frame" x="81.5" y="83.5" width="71" height="71"/>
+                    <state key="normal" backgroundImage="video-play"/>
+                    <state key="highlighted" image="playButtonClick"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="v40-uO-bSE" userLabel="占位图">
+                    <rect key="frame" x="10" y="13.5" width="214" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="s0P-00-150"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wGl-it-3fJ" secondAttribute="trailing" id="0iU-YH-jeq"/>
+                <constraint firstAttribute="bottom" secondItem="WKo-kw-26C" secondAttribute="bottom" id="0td-ZP-Q0X"/>
+                <constraint firstItem="pAX-1F-giD" firstAttribute="top" secondItem="9ZH-n9-A1u" secondAttribute="top" id="18y-1N-WyP"/>
+                <constraint firstItem="bKj-3G-ECF" firstAttribute="centerY" secondItem="9ZH-n9-A1u" secondAttribute="centerY" id="AHb-XE-z7B"/>
+                <constraint firstItem="bKj-3G-ECF" firstAttribute="top" secondItem="v40-uO-bSE" secondAttribute="bottom" constant="15" id="Flw-KO-TNc"/>
+                <constraint firstItem="wGl-it-3fJ" firstAttribute="top" secondItem="9ZH-n9-A1u" secondAttribute="top" id="RPa-Vn-aqE"/>
+                <constraint firstItem="wGl-it-3fJ" firstAttribute="leading" secondItem="9ZH-n9-A1u" secondAttribute="leading" id="SKP-Dd-UPh"/>
+                <constraint firstAttribute="bottom" secondItem="wGl-it-3fJ" secondAttribute="bottom" id="a8B-zC-r34"/>
+                <constraint firstAttribute="trailing" secondItem="v40-uO-bSE" secondAttribute="trailing" constant="10" id="eHg-bW-8jV"/>
+                <constraint firstItem="v40-uO-bSE" firstAttribute="leading" secondItem="9ZH-n9-A1u" secondAttribute="leading" constant="10" id="p8T-OH-0bq"/>
+                <constraint firstAttribute="trailing" secondItem="WKo-kw-26C" secondAttribute="trailing" id="uTg-if-jzD"/>
+                <constraint firstAttribute="trailing" secondItem="pAX-1F-giD" secondAttribute="trailing" id="v2g-PO-AXn"/>
+                <constraint firstItem="bKj-3G-ECF" firstAttribute="centerX" secondItem="9ZH-n9-A1u" secondAttribute="centerX" id="zOA-ei-AAa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="placeholderImageV" destination="v40-uO-bSE" id="MQc-gj-b3e"/>
+                <outlet property="playCountLabel" destination="pAX-1F-giD" id="hIN-Yi-N7L"/>
+                <outlet property="timeLabel" destination="WKo-kw-26C" id="evk-k5-4fw"/>
+                <outlet property="topicImageV" destination="wGl-it-3fJ" id="Vo2-Vi-JVc"/>
+            </connections>
+            <point key="canvasLocation" x="-6" y="19"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="imageBackground" width="75" height="15"/>
+        <image name="playButtonClick" width="63" height="63"/>
+        <image name="video-play" width="71" height="71"/>
+    </resources>
+</document>
