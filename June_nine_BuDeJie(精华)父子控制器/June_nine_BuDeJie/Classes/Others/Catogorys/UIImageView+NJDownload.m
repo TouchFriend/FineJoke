@@ -19,8 +19,9 @@
     UIImage * originImage = [sharedImageCache imageFromDiskCacheForKey:originImageURL];
     if(originImage != nil)//有原图
     {
-        self.image = originImage;
-        completeBlock(originImage,nil,0,[NSURL URLWithString:originImageURL]);
+//        self.image = originImage;
+//        completeBlock(originImage,nil,0,[NSURL URLWithString:originImageURL]);
+        [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completeBlock];
     }else
     {
         if([reachabilityManager isReachableViaWiFi])//wifi
@@ -46,12 +47,11 @@
             UIImage * smallImage = [sharedImageCache imageFromDiskCacheForKey:thumbnailImageURL];
             if(smallImage != nil)
             {
-                self.image = smallImage;//小图
-                completeBlock(smallImage,nil,0,[NSURL URLWithString:thumbnailImageURL]);
+                [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completeBlock];
             }
             else
             {
-                self.image = placeholder;//占位图
+                [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completeBlock];//占位图
             }
         }
     }

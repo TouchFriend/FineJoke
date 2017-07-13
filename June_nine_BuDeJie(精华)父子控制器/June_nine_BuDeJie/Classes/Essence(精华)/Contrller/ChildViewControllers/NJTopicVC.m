@@ -282,7 +282,7 @@ static NSString * const ID = @"NJTopicCellID";
     [self resolveDownDragRefresh];
     //上拉刷新
     [self resolveUpDragRefresh];
-    //清除缓存
+    //清除内存缓存
     [[SDImageCache sharedImageCache] clearMemory];
 }
 //用户松开手后调用
