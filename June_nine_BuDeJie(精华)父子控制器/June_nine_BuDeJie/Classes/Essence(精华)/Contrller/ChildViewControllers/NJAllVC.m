@@ -107,6 +107,10 @@
     {
         return;
     }
+    //下拉刷新数据
+    [self beginDownDragRefreshing];
+    //设置offsetY
+    self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x, - self.tableView.contentInset.top);
     NJFunc;
 }
 #pragma mark - 数据源
@@ -155,32 +159,8 @@
     CGFloat offsetY = NJNavBarMaxY + NJTitleBarHeight + self.headerView.NJ_height;
     if(self.tableView.contentOffset.y <= - offsetY)
     {
-        self.headerLabel.text = NJisDownDragRefreshingText;
-        self.downDragRefreshStatus = YES;
-        //增加内边距
-        [UIView animateWithDuration:0.2 animations:^{
-            UIEdgeInsets contentInset = self.tableView.contentInset;
-            contentInset.top += self.headerLabel.NJ_height;
-            self.tableView.contentInset = contentInset;
-        }];
-        //发送请求
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //处理数据
-            self.dataCount = 15;
-            //刷新表格
-            [self.tableView reloadData];
-            //结束刷新
-            self.downDragRefreshStatus = NO;
-            //减少内边距
-            [UIView animateWithDuration:0.2 animations:^{
-                UIEdgeInsets contentInset = self.tableView.contentInset;
-                contentInset.top -= self.headerLabel.NJ_height;
-                self.tableView.contentInset = contentInset;
-            }];
-            
-        });
-        
-        NJFunc;
+        //开始下拉刷新
+        [self beginDownDragRefreshing];
     }
 }
 #pragma mark - 下拉刷新
@@ -221,25 +201,81 @@
     if(contentOffsetY >= offsetY
        && contentOffsetY > - self.tableView.contentInset.top)//当上拉刷新条完全出现，而且是往上拉
     {
-        NJLog(@"发送请求，加载数据");
-        //正在刷新中
-        self.upDragrefreshStatus = YES;
-        self.footerLable.text = NJisUpDragRefreshingText;
-        //发送请求，加载数据
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //获取了数据
-            self.dataCount += 5;
-            //刷新表格
-            [self.tableView reloadData];
-            
-            //结束刷新状态
-            self.upDragrefreshStatus = NO;
-            //更改文字
-            self.footerLable.text = NJUpDragNotRefreshText;
-            
-            
-            
-        });
+        //开始上拉刷新
+        [self beginUpDragRefreshing];
     }
+}
+#pragma mark - 下拉加载新数据
+- (void)loadNewData
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //处理数据
+        self.dataCount = 15;
+        //刷新表格
+        [self.tableView reloadData];
+        //结束下拉刷新
+        [self endDownDragRefreshing];
+    });
+}
+#pragma mark - 上拉加载更多新数据
+- (void)loadMoreData
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //获取了数据
+        self.dataCount += 5;
+        //刷新表格
+        [self.tableView reloadData];
+        
+        //结束上拉刷新状态
+        [self endUpDragRefreshing];
+        
+    });
+}
+#pragma mark - 开始下拉刷新
+- (void)beginDownDragRefreshing
+{
+    self.headerLabel.text = NJisDownDragRefreshingText;
+    //正在刷新中
+    self.downDragRefreshStatus = YES;
+    //增加内边距
+    [UIView animateWithDuration:0.2 animations:^{
+        UIEdgeInsets contentInset = self.tableView.contentInset;
+        contentInset.top += self.headerLabel.NJ_height;
+        self.tableView.contentInset = contentInset;
+    }];
+    //发送请求,加载新数据
+    [self loadNewData];
+    NJFunc;
+
+}
+#pragma mark - 结束下拉刷新
+- (void)endDownDragRefreshing
+{
+    self.downDragRefreshStatus = NO;
+    //减少内边距
+    [UIView animateWithDuration:0.2 animations:^{
+        UIEdgeInsets contentInset = self.tableView.contentInset;
+        contentInset.top -= self.headerLabel.NJ_height;
+        self.tableView.contentInset = contentInset;
+    }];
+    
+}
+#pragma mark - 开始上拉刷新
+- (void)beginUpDragRefreshing
+{
+    NJLog(@"发送请求，加载数据");
+    //正在刷新中
+    self.upDragrefreshStatus = YES;
+    self.footerLable.text = NJisUpDragRefreshingText;
+    //发送请求，加载更多数据
+    [self loadMoreData];
+ 
+}
+#pragma mark - 结束上拉刷新状态
+- (void)endUpDragRefreshing
+{
+    self.upDragrefreshStatus = NO;
+    //更改文字
+    self.footerLable.text = NJUpDragNotRefreshText;
 }
 @end
