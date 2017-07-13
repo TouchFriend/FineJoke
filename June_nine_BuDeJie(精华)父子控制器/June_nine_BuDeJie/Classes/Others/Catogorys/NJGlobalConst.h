@@ -14,3 +14,11 @@ UIKIT_EXTERN CGFloat const NJTabBarHeight;
 UIKIT_EXTERN CGFloat const NJNavBarMaxY;
 //标题栏的高度
 UIKIT_EXTERN CGFloat const NJTitleBarHeight;
+//TabBarButton被重复点击的通知
+UIKIT_EXTERN NSString * const NJTabBarButtonDidRepeatClickNotification;
+//标题栏按钮被点击的通知
+UIKIT_EXTERN NSString * const NJTitleBarButtonDidRepeatClickNotification;
+//footerView未刷新时的文字
+UIKIT_EXTERN NSString * const NJNotRefreshText;
+//footerView正在刷新时的文字
+UIKIT_EXTERN NSString * const NJisRefreshingText;

@@ -15,7 +15,19 @@
 @end
 
 @implementation AppDelegate
-
+#pragma mark - 监听状态栏的点击
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    //Pass nil to get the touch location in the window’s coordinates.
+//    //为空，默认是窗口的坐标系
+//    CGPoint point = [touches.anyObject locationInView:nil];
+//    if(point.y <= 20)
+//    {
+//        NJLog(@"%@",NSStringFromCGPoint(point));
+//        
+//    }
+//    
+//}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //1.创建window

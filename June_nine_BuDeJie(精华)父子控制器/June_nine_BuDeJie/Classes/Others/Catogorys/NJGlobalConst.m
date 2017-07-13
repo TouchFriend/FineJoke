@@ -14,4 +14,12 @@ CGFloat const NJTabBarHeight = 49;
 CGFloat const NJNavBarMaxY = 64;
 //标题栏的高度
 CGFloat const NJTitleBarHeight = 40;
+//TabBarButton被重复点击的通知
+NSString * const NJTabBarButtonDidRepeatClickNotification = @"NJTabBarButtonDidRepeatClickNotification";
+//标题栏按钮被点击的通知
+NSString * const NJTitleBarButtonDidRepeatClickNotification = @"NJTitleBarButtonDidRepeatClickNotification";
+//footerView未刷新时的文字
+UIKIT_EXTERN NSString * const NJNotRefreshText = @"点击或上拉加载更多";
+//footerView正在刷新时的文字
+UIKIT_EXTERN NSString * const NJisRefreshingText = @"正在加载数据中....";
 /*************** 精华控制器 ********************/
