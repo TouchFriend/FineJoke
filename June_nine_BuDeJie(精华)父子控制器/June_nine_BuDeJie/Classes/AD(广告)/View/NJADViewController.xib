@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NJADViewController">
+            <connections>
+                <outlet property="ADContainerView" destination="CyI-iV-a8a" id="m50-ep-BuU"/>
+                <outlet property="jumpBtn" destination="6jE-sn-Rn4" id="S6b-Jb-LRt"/>
+                <outlet property="launchImageView" destination="N6q-dl-7UE" id="ocn-9g-yko"/>
+                <outlet property="view" destination="6OZ-8k-Saj" id="Po5-ic-Mkl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6OZ-8k-Saj">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6q-dl-7UE" userLabel="启动图片">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyI-iV-a8a" userLabel="广告占位视图">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jE-sn-Rn4">
+                    <rect key="frame" x="295" y="35" width="65" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="cOG-pz-xID"/>
+                    </constraints>
+                    <state key="normal" title="跳过 (3)">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="jumpBtnClick:" destination="-1" eventType="touchUpInside" id="oeK-n0-hXj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="N6q-dl-7UE" secondAttribute="trailing" id="4rj-v3-2kt"/>
+                <constraint firstAttribute="bottom" secondItem="N6q-dl-7UE" secondAttribute="bottom" id="B52-Yq-vKR"/>
+                <constraint firstItem="N6q-dl-7UE" firstAttribute="top" secondItem="6OZ-8k-Saj" secondAttribute="top" id="PA7-X7-eiN"/>
+                <constraint firstAttribute="trailing" secondItem="CyI-iV-a8a" secondAttribute="trailing" id="Sqc-06-6Cu"/>
+                <constraint firstItem="CyI-iV-a8a" firstAttribute="leading" secondItem="6OZ-8k-Saj" secondAttribute="leading" id="bmq-AW-6ri"/>
+                <constraint firstAttribute="bottom" secondItem="CyI-iV-a8a" secondAttribute="bottom" id="d1P-er-ZOv"/>
+                <constraint firstItem="N6q-dl-7UE" firstAttribute="leading" secondItem="6OZ-8k-Saj" secondAttribute="leading" id="gwo-e8-60M"/>
+                <constraint firstItem="6jE-sn-Rn4" firstAttribute="top" secondItem="6OZ-8k-Saj" secondAttribute="top" constant="35" id="tFm-BW-axf"/>
+                <constraint firstAttribute="trailing" secondItem="6jE-sn-Rn4" secondAttribute="trailing" constant="15" id="uP3-lb-gxD"/>
+                <constraint firstItem="CyI-iV-a8a" firstAttribute="top" secondItem="6OZ-8k-Saj" secondAttribute="top" id="vzM-UQ-hAS"/>
+            </constraints>
+            <point key="canvasLocation" x="-15" y="3"/>
+        </view>
+    </objects>
+</document>
