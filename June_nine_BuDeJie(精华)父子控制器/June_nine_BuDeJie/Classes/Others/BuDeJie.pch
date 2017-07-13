@@ -14,6 +14,8 @@
  */
 #import "UIView+NJFrame.h"
 #import "UIBarButtonItem+NJItem.h"
+#import "NJGlobalConst.h"
+
 #define NJFunc NJLog(@"%s",__func__)
 /***************设置颜色*********************/
 #define NJRandomColor NJColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))

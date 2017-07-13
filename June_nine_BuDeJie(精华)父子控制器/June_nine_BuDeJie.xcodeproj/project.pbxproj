@@ -66,6 +66,7 @@
 		BFF170D41EF77736007655FD /* NJVoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D31EF77736007655FD /* NJVoiceVC.m */; };
 		BFF170D71EF77743007655FD /* NJPictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D61EF77743007655FD /* NJPictureVC.m */; };
 		BFF170DA1EF77751007655FD /* NJWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170D91EF77751007655FD /* NJWordVC.m */; };
+		BFF170DD1EF79EE4007655FD /* NJGlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF170DC1EF79EE4007655FD /* NJGlobalConst.m */; };
 		C41C7610C4BF64DA8F721CE5 /* libPods-June_nine_BuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF800F2CCFC005A7DE2A973 /* libPods-June_nine_BuDeJie.a */; };
 /* End PBXBuildFile section */
 
@@ -183,6 +184,8 @@
 		BFF170D61EF77743007655FD /* NJPictureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPictureVC.m; sourceTree = "<group>"; };
 		BFF170D81EF77751007655FD /* NJWordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJWordVC.h; sourceTree = "<group>"; };
 		BFF170D91EF77751007655FD /* NJWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJWordVC.m; sourceTree = "<group>"; };
+		BFF170DB1EF79EE4007655FD /* NJGlobalConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJGlobalConst.h; path = Catogorys/NJGlobalConst.h; sourceTree = "<group>"; };
+		BFF170DC1EF79EE4007655FD /* NJGlobalConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJGlobalConst.m; path = Catogorys/NJGlobalConst.m; sourceTree = "<group>"; };
 		F9F50A6ECE431625E2664CEA /* Pods-June_nine_BuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-June_nine_BuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-June_nine_BuDeJie/Pods-June_nine_BuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -441,6 +444,8 @@
 				BF263F181EEBE61B0027FDCB /* AppDelegate.m */,
 				BF263F191EEBE61B0027FDCB /* LaunchScreen.storyboard */,
 				BF263F1B1EEBE61B0027FDCB /* Main.storyboard */,
+				BFF170DB1EF79EE4007655FD /* NJGlobalConst.h */,
+				BFF170DC1EF79EE4007655FD /* NJGlobalConst.m */,
 				BFC05ACD1EEE6C9A0025F5CE /* BuDeJie.pch */,
 				BFA2461B1EEEE95F0004EE4E /* 启动图片 */,
 			);
@@ -1041,6 +1046,7 @@
 				BFC05AC91EEE29BE0025F5CE /* NJTabBar.m in Sources */,
 				BF50DEBA1EEE87960073ABAF /* NJNavigationVC.m in Sources */,
 				BFF170DA1EF77751007655FD /* NJWordVC.m in Sources */,
+				BFF170DD1EF79EE4007655FD /* NJGlobalConst.m in Sources */,
 				BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */,
 				BFC05AD31EEE70940025F5CE /* UIBarButtonItem+NJItem.m in Sources */,
 				BF263F3A1EEBE61B0027FDCB /* UIImage+NJImage.m in Sources */,

@@ -14,17 +14,18 @@
 #import "NJPictureVC.h"
 #import "NJWordVC.h"
 
-#define TitleHeight 40
-#define UnderlineHeight 2
-@interface NJEssenceVC ()
+
+@interface NJEssenceVC () <UIScrollViewDelegate>
 /********* 标题栏 *********/
 @property(nonatomic,weak)UIView * titleView;
 /********* 前一个选中按钮 *********/
 @property(nonatomic,weak)NJTitleButton * previousBtn;
 /********* 下划线 *********/
 @property(nonatomic,weak)UIView * underlineView;
+/********* scrollView *********/
+@property(nonatomic,weak)UIScrollView * contentSV;
 @end
-
+static NSInteger const underlineHeight = 2;
 @implementation NJEssenceVC
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,9 +55,14 @@
     [self addChildViewController:[[NJWordVC alloc]init]];
 }
 #pragma mark - 设置scrollView
+/*
+ cell的全屏穿透:
+ 1.tableView布满整个屏幕
+ 2.设置上下内边距
+ */
+
 - (void)setupScrollView
 {
-    
     //有导航条，默认会让scrollView或者其子类，tableView的内边距设置为64；
     //不允许自动修改scrollView的内边距
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -65,13 +71,24 @@
     contentSV.backgroundColor = [UIColor orangeColor];
     NSUInteger count =  self.childViewControllers.count;
     [self.view addSubview:contentSV];
+    
+    //设置scrollView的分页功能
+    contentSV.pagingEnabled = YES;
+    //取消水平指示器和垂直指示器
+    contentSV.showsHorizontalScrollIndicator = NO;
+    contentSV.showsVerticalScrollIndicator = NO;
+    //设置代理
+    contentSV.delegate = self;
+    _contentSV = contentSV;
+    
     CGFloat childVcViewW = contentSV.NJ_width;
     CGFloat childVcViewH = contentSV.NJ_height;
-    
     for (NSUInteger index = 0 ; index < count; index++) {
-        //添加
+        //取出对应子控制器的view
         UIView * childVcView = self.childViewControllers[index].view;
+        //设置frame
         childVcView.frame = CGRectMake(index * childVcViewW, 0, childVcViewW, childVcViewH);
+        //添加的scrollView中
         [contentSV addSubview:childVcView];
     }
     //设置contentSize
@@ -81,7 +98,7 @@
 #pragma mark - 设置标题栏
 - (void)setupTitleBar
 {
-    UIView * titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.NJ_width, TitleHeight)];
+    UIView * titleView = [[UIView alloc]initWithFrame:CGRectMake(0, NJNavBarMaxY, self.view.NJ_width, NJTitleBarHeight)];
     titleView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
 //    titleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
     [self.view addSubview:titleView];
@@ -97,7 +114,7 @@
     NJTitleButton * titleBtn = [self.titleView.subviews firstObject];
     //标题尺寸自适应
     [titleBtn.titleLabel sizeToFit];
-    CGFloat underlineH = UnderlineHeight;
+    CGFloat underlineH = underlineHeight;
     CGFloat underlineY = self.titleView.NJ_height - underlineH;
     CGFloat underlineW = titleBtn.titleLabel.NJ_width + 10;
     //创建下划线
@@ -137,6 +154,8 @@
         CGFloat titleBtnX = index * titleBtnW;
         //设置frame
         titleBtn.frame = CGRectMake(titleBtnX, 0, titleBtnW, titleBtnH);
+        //设置Tag
+        titleBtn.tag = index;
         if(index == 0)
         {
             titleBtn.selected = YES;
@@ -155,12 +174,14 @@
     titleBtn.selected = YES;
     
     self.previousBtn = titleBtn;
-    [UIView animateWithDuration:0.25
-                     animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         //设置下划线width
         self.underlineView.NJ_width = titleBtn.titleLabel.NJ_width + 10;
         //设置下划线centerX
         self.underlineView.NJ_centerX = titleBtn.NJ_centerX;
+        //联动
+        CGFloat index = titleBtn.tag;
+        self.contentSV.contentOffset = CGPointMake(index * self.contentSV.NJ_width, self.contentSV.contentOffset.y);
     }];
     
 }
@@ -184,5 +205,22 @@
     //中间标题
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
 }
-
+#pragma mark - UIScrollViewDelegate方法
+//用户放开手后，scrollView停止滚动后调用(完成减速后调用)
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //获取按钮索引
+    NSInteger index =  scrollView.contentOffset.x / scrollView.NJ_width;
+    //获取对应的按钮
+    //方法一
+    NJTitleButton * titleBtn = self.titleView.subviews[index];
+    /*
+     方法二有缺陷:viewWithTag:用递归查询，包括自己，查看tag是否跟给定的tag一致。
+     而控件默认的都是0，所以传回自己， 所以传0时会特技
+     */
+//    NJTitleButton * titleBtn = [self.titleView viewWithTag:index];
+    
+    //点击对应的按钮(联动)
+    [self titleBtnClick:titleBtn];
+}
 @end

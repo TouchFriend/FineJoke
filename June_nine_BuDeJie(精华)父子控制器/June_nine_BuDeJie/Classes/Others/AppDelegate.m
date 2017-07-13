@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NJADViewController.h"
 #import "NJTabBarController.h"
+
 @interface AppDelegate ()
 
 @end
