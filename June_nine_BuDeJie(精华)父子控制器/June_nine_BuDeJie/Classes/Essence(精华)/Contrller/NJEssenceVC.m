@@ -70,7 +70,7 @@ static NSInteger const underlineHeight = 2;
     self.automaticallyAdjustsScrollViewInsets = NO;
     UIScrollView * contentSV = [[UIScrollView alloc]init];
     contentSV.frame = self.view.bounds;
-    contentSV.backgroundColor = [UIColor orangeColor];
+    contentSV.backgroundColor = NJGrayColor(122);
     NSUInteger count =  self.childViewControllers.count;
     contentSV.scrollsToTop = NO;//不需要点击状态栏回到顶部
     [self.view addSubview:contentSV];

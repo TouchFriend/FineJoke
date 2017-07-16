@@ -7,6 +7,7 @@
 //
 
 #import "NJTabBar.h"
+#import "NJPublicVC.h"
 
 @interface NJTabBar ()
 /********* 添加按钮 *********/
@@ -24,6 +25,8 @@
         UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        //添加事件
+        [btn addTarget:self action:@selector(plusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         //设置size
         [btn sizeToFit];
         //添加到父控件中
@@ -75,5 +78,12 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NJTabBarButtonDidRepeatClickNotification object:nil];
     }
     self.previousClickedTabBarBtn = tabBarBtn;
+}
+#pragma mark - 点击发布按钮
+- (void)plusBtnClick:(UIButton *)button
+{
+    //跳转到发布界面
+    NJPublicVC * publicVC = [[NJPublicVC alloc]init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publicVC animated:YES completion:nil];
 }
 @end

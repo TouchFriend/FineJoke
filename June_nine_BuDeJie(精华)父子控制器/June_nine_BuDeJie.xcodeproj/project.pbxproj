@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF10CE8D1F1BD41E000EC109 /* NJPublicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10CE8C1F1BD41E000EC109 /* NJPublicButton.m */; };
+		BF10CE8F1F1BD53E000EC109 /* NJPublicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF10CE8E1F1BD53E000EC109 /* NJPublicVC.xib */; };
 		BF1DFE8C1EEFFA82004C9C1F /* NJSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1DFE8B1EEFFA82004C9C1F /* NJSubTagItem.m */; };
 		BF1DFE911EEFFFAB004C9C1F /* NJSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1DFE8F1EEFFFAB004C9C1F /* NJSubTagCell.m */; };
 		BF1DFE921EEFFFAB004C9C1F /* NJSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1DFE901EEFFFAB004C9C1F /* NJSubTagCell.xib */; };
@@ -111,6 +113,9 @@
 /* Begin PBXFileReference section */
 		0DF800F2CCFC005A7DE2A973 /* libPods-June_nine_BuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-June_nine_BuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		955D607AB023EA190F6F7220 /* Pods-June_nine_BuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-June_nine_BuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-June_nine_BuDeJie/Pods-June_nine_BuDeJie.release.xcconfig"; sourceTree = "<group>"; };
+		BF10CE8B1F1BD41E000EC109 /* NJPublicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJPublicButton.h; sourceTree = "<group>"; };
+		BF10CE8C1F1BD41E000EC109 /* NJPublicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPublicButton.m; sourceTree = "<group>"; };
+		BF10CE8E1F1BD53E000EC109 /* NJPublicVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJPublicVC.xib; sourceTree = "<group>"; };
 		BF1DFE8A1EEFFA82004C9C1F /* NJSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSubTagItem.h; sourceTree = "<group>"; };
 		BF1DFE8B1EEFFA82004C9C1F /* NJSubTagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSubTagItem.m; sourceTree = "<group>"; };
 		BF1DFE8E1EEFFFAB004C9C1F /* NJSubTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSubTagCell.h; sourceTree = "<group>"; };
@@ -294,6 +299,15 @@
 				955D607AB023EA190F6F7220 /* Pods-June_nine_BuDeJie.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF10CE8A1F1BD410000EC109 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				BF10CE8B1F1BD41E000EC109 /* NJPublicButton.h */,
+				BF10CE8C1F1BD41E000EC109 /* NJPublicButton.m */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		BF1DFE8D1EEFFF93004C9C1F /* Cells */ = {
@@ -571,6 +585,7 @@
 				BF263F211EEBE61B0027FDCB /* Contrller */,
 				BF263F241EEBE61B0027FDCB /* Model */,
 				BF263F251EEBE61B0027FDCB /* View */,
+				BF10CE8A1F1BD410000EC109 /* Others */,
 			);
 			path = "Public(发布)";
 			sourceTree = "<group>";
@@ -594,6 +609,7 @@
 		BF263F251EEBE61B0027FDCB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF10CE8E1F1BD53E000EC109 /* NJPublicVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1091,6 +1107,7 @@
 				BFAA43681EF120A800611288 /* NJFastLoginView.xib in Resources */,
 				BFAA435C1EF1069F00611288 /* NJLoginRegisterVC.xib in Resources */,
 				BFAA43621EF10D5000611288 /* NJLoginRegisterView.xib in Resources */,
+				BF10CE8F1F1BD53E000EC109 /* NJPublicVC.xib in Resources */,
 				BFA246261EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png in Resources */,
 				BFA246231EEEE95F0004EE4E /* LaunchImage-568h@2x.png in Resources */,
 				BF4441BF1F1918CE0040114E /* NJCommentCell.xib in Resources */,
@@ -1203,6 +1220,7 @@
 				BF4441B41F187EC10040114E /* NJPlayerViewController.m in Sources */,
 				BFF7CB971F00A14700A46971 /* NJTopicVideoView.m in Sources */,
 				BF263F311EEBE61B0027FDCB /* NJEssenceVC.m in Sources */,
+				BF10CE8D1F1BD41E000EC109 /* NJPublicButton.m in Sources */,
 				BFAA436C1EF1360A00611288 /* NJFastLoginButton.m in Sources */,
 				BF71DE2D1EFE45C3008E68FC /* NJTopicFrame.m in Sources */,
 				BFAA435B1EF1069F00611288 /* NJLoginRegisterVC.m in Sources */,

@@ -8,4 +8,5 @@ target 'June_nine_BuDeJie' do
 	pod ‘FMDB’,’>=2.7.2’
 	pod ‘CTAssetsPickerController’,’>=3.3.2-alpha’
 	pod ‘ZFPlayer’, ‘~>2.1.5’
+	pod ‘pop’,’~>1.0.10’
 end

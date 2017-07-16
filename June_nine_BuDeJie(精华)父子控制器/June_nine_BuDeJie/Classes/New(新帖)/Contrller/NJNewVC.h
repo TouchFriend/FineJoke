@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NJNewVC : UIViewController
+#import "NJEssenceVC.h"
+@interface NJNewVC : NJEssenceVC
 
 @end

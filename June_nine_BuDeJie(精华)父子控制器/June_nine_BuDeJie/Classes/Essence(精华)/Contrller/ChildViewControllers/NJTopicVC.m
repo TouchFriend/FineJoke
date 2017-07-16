@@ -20,6 +20,7 @@
 #import "NJRefreshAutoNormalFooter.h"
 #import "NJHTTPSessionManager.h"
 #import "NJCommentViewController.h"
+#import "NJNewVC.h"
 
 #define NJMargin 10
 @interface NJTopicVC ()
@@ -31,9 +32,10 @@
 /********* 会话管理者 *********/
 @property(nonatomic,strong)NJHTTPSessionManager * manager;
 
-
 /********* 帖子(数据) *********/
 @property(nonatomic,strong)NSMutableArray * topicsArrM;
+/********* 获取参数a的值 *********/
+- (NSString *)aParameter;
 
 @end
 
@@ -104,7 +106,7 @@ static NSString * const ID = @"NJTopicCellID";
     //取消前一次的请求
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
-    parameters[@"a"] = @"list";
+    parameters[@"a"] = self.aParameter;
     parameters[@"c"] = @"data";
     parameters[@"type"] = @([self type]);//设置数据类型
     //发送请求
@@ -146,7 +148,7 @@ static NSString * const ID = @"NJTopicCellID";
     //取消前一次的请求
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
-    parameters[@"a"] = @"list";
+    parameters[@"a"] = self.aParameter;
     parameters[@"c"] = @"data";
     parameters[@"type"] = @([self type]);//设置数据类型
     parameters[@"maxtime"] = self.maxtime;
@@ -192,12 +194,12 @@ static NSString * const ID = @"NJTopicCellID";
 #pragma mark - 设置下拉刷新
 - (void)setupDownDragRefresh
 {
-    //广告
-    UIView * adView = [[UIView alloc]init];
-    adView.frame = CGRectMake(0, 0, self.tableView.NJ_width, 44);
-    adView.backgroundColor = [UIColor greenColor];
-    self.adView = adView;
-    self.tableView.tableHeaderView = adView;
+//    //广告
+//    UIView * adView = [[UIView alloc]init];
+//    adView.frame = CGRectMake(0, 0, self.tableView.NJ_width, 44);
+//    adView.backgroundColor = [UIColor greenColor];
+//    self.adView = adView;
+//    self.tableView.tableHeaderView = adView;
     //下拉刷新控件
     self.tableView.mj_header = [NJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
     
@@ -279,5 +281,14 @@ static NSString * const ID = @"NJTopicCellID";
     //清除内存缓存
     [[SDImageCache sharedImageCache] clearMemory];
 }
-
+#pragma mark - 获取参数a的值
+- (NSString *)aParameter
+{
+    //如果父控制器是新帖控制器
+    if([self.parentViewController isKindOfClass:[NJNewVC class]])
+    {
+        return @"newlist";
+    }
+    return @"list";
+}
 @end

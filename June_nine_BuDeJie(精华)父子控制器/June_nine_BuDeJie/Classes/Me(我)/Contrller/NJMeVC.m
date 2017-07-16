@@ -13,6 +13,8 @@
 #import "NJSquareItem.h"
 #import "NJSquareCell.h"
 #import "NJWebVC.h"
+#import "NJLoginRegisterVC.h"
+
 #define NJMeUrl @"http://api.budejie.com/api/api_open.php"
 #define cellWH ((NJScreenW - (column - 1) * margin) / 4)
 @interface NJMeVC () <UICollectionViewDataSource,UICollectionViewDelegate>
@@ -184,7 +186,14 @@ static NSInteger const column = 4;
 #pragma mark - UITableViewDelegate方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+   if(indexPath.section == 0 && indexPath.row == 0)
+   {
+       //跳转到登录注册界面
+       NJLoginRegisterVC * loginRegisterVC = [[NJLoginRegisterVC alloc]init];
+       [self presentViewController:loginRegisterVC animated:YES completion:^{
+           
+       }];
+   }
 }
 #pragma mark - UICollectionViewDelegate方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
