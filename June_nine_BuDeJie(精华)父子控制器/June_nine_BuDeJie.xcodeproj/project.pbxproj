@@ -1367,6 +1367,7 @@
 				DEVELOPMENT_TEAM = E435LNP339;
 				GCC_PREFIX_HEADER = June_nine_BuDeJie/Classes/Others/BuDeJie.pch;
 				INFOPLIST_FILE = June_nine_BuDeJie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cxz.June-nine-BuDeJie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1382,6 +1383,7 @@
 				DEVELOPMENT_TEAM = E435LNP339;
 				GCC_PREFIX_HEADER = June_nine_BuDeJie/Classes/Others/BuDeJie.pch;
 				INFOPLIST_FILE = June_nine_BuDeJie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cxz.June-nine-BuDeJie";
 				PRODUCT_NAME = "$(TARGET_NAME)";

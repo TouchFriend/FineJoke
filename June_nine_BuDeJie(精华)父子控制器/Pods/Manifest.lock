@@ -19,6 +19,7 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - PureLayout (3.0.2)
@@ -26,6 +27,8 @@ PODS:
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
   - SVProgressHUD (2.1.2)
+  - ZFPlayer (2.1.5):
+    - Masonry
 
 DEPENDENCIES:
   - AFNetworking (>= 3.1.0)
@@ -35,17 +38,20 @@ DEPENDENCIES:
   - MJRefresh (>= 3.1.12)
   - SDWebImage (~> 3.7.5)
   - SVProgressHUD (>= 2.1.2)
+  - ZFPlayer (~> 2.1.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CTAssetsPickerController: ef06977de8e0b6d6ff11a324d357a12335a61243
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
 
-PODFILE CHECKSUM: 6d8d8ca9dcb9bc37df70dc9fcb2ffb00f00aa8e6
+PODFILE CHECKSUM: f7a670fd665bfdc53937e3eae47b81960c01c12d
 
 COCOAPODS: 1.2.1

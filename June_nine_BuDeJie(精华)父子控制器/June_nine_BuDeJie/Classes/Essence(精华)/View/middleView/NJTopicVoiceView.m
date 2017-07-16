@@ -12,6 +12,8 @@
 #import "NJTopic.h"
 #import "UIImageView+NJDownload.h"
 #import "NJSeeBigPictureVC.h"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 @interface NJTopicVoiceView ()
 @property (weak, nonatomic) IBOutlet UIImageView *topicImageV;
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
@@ -26,7 +28,7 @@
     [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
     self.userInteractionEnabled = YES;
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showBigPicture)];
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playVoice)];
     [self addGestureRecognizer:tapGesture];
 }
 - (void)setTopic:(NJTopic *)topic
@@ -55,11 +57,12 @@
     self.timeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld",topic.voicetime / 60,topic.voicetime % 60];
 }
 #pragma mark - 点击查看大图
-- (void)showBigPicture
+- (void)playVoice
 {
-    NJSeeBigPictureVC * seeBigPictureVC = [[NJSeeBigPictureVC alloc]init];
-    seeBigPictureVC.topic = self.topic;//传递模型
-    [self.window.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
-    //    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+    AVPlayer * player = [AVPlayer playerWithURL:[NSURL URLWithString:self.topic.voiceuri]];
+    AVPlayerViewController * playerVC = [[AVPlayerViewController alloc]init];
+    playerVC.player = player;
+    [self.window.rootViewController presentViewController:playerVC animated:YES completion:nil];
+    [player play];
 }
 @end

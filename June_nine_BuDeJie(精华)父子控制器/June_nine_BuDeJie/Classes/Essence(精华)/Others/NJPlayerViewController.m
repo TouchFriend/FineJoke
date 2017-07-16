@@ -8,46 +8,58 @@
 
 #import "NJPlayerViewController.h"
 #import "NJTopic.h"
+#import <ZFPlayer/ZFPlayer.h>
 
-@interface NJPlayerViewController ()
-/********** 点击返回按钮 **********/
-- (IBAction)backBtnClick:(UIButton *)sender;
-/********* 播放器 *********/
-@property(nonatomic,strong)AVPlayer * player;
-/********* 播放器层 *********/
-@property(nonatomic,strong)AVPlayerLayer * playerLayer;
-/********* 播放器单元 *********/
-@property(nonatomic,strong)AVPlayerItem * playerItem;
-/********* 用户存储avPlayerLayer *********/
-@property (weak, nonatomic) IBOutlet UIView *playerView;
-
+@interface NJPlayerViewController () <ZFPlayerDelegate>
+@property (nonatomic, strong) UIView *playerFatherView;
+@property (nonatomic, strong) ZFPlayerView *playerView;
+@property (nonatomic, strong) ZFPlayerModel *playerModel;
 @end
 
 @implementation NJPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:self.topic.videouri]];
-    //创建播放器
-    self.player = [[AVPlayer alloc]initWithPlayerItem:self.playerItem];
-    //创建播放图层
-    self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    //往播放占位视图上添加播放图层
-    [self.playerView.layer addSublayer:self.playerLayer];
-    
+    [self addFatherView];
+    [self addPlayerView];
+    [self addPlayerModel];
+    self.playerView.delegate = self;
+    [self.playerView autoPlayTheVideo];
 }
-- (void)viewDidLayoutSubviews
+- (void)addFatherView
 {
-    self.playerLayer.frame = self.playerView.bounds;
+    self.playerFatherView = [[UIView alloc] init];
+    [self.view addSubview:self.playerFatherView];
+    [self.playerFatherView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.mas_equalTo(0);
+        make.leading.trailing.mas_equalTo(0);
+//         这里宽高比16：9,可自定义宽高比
+        make.height.mas_equalTo(self.playerFatherView.mas_width).multipliedBy(9.0f/16.0f);
+    }];
 }
-- (void)viewDidAppear:(BOOL)animated
+- (void)addPlayerView
 {
-    [super viewDidAppear:animated];
-    [self.player play];
+    self.playerView = [[ZFPlayerView alloc] init];
+    [self.view addSubview:self.playerView];
+    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(20);
+        make.left.right.equalTo(self.view);
+        // 这里宽高比16：9，可以自定义视频宽高比
+        make.height.equalTo(self.playerView.mas_width).multipliedBy(9.0f/16.0f);
+    }];
 }
+- (void)addPlayerModel
+{
+    ZFPlayerControlView * controlView = [[ZFPlayerControlView alloc]init];
+    ZFPlayerModel * playerModle = [[ZFPlayerModel alloc]init];
+    playerModle.videoURL = [NSURL URLWithString:self.topic.videouri];
 
-- (IBAction)backBtnClick:(UIButton *)sender
+    playerModle.title = self.topic.text;
+    playerModle.fatherView = self.playerFatherView;
+    [self.playerView playerControlView:controlView playerModel:playerModle];
+}
+- (void)zf_playerBackAction
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+   [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
