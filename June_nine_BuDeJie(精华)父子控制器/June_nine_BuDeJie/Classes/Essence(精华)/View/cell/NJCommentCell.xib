@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,6 +77,10 @@
                         <state key="normal" title="12''" image="play-voice-stop" backgroundImage="play-voice-bg">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <state key="selected" image="play-voice-icon-3" backgroundImage="play-voice-bg"/>
+                        <connections>
+                            <action selector="voiceBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NBN-7d-hDj"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -106,7 +109,7 @@
                 <outlet property="profileImageV" destination="BB1-dg-C99" id="i7Q-wW-Oes"/>
                 <outlet property="sexImageV" destination="qvt-UK-6mz" id="jwr-PH-3u9"/>
                 <outlet property="usernameLabel" destination="jo5-4I-rpM" id="OLq-R7-ndv"/>
-                <outlet property="voiceBtn" destination="sWb-dH-odB" id="PjD-oc-3NX"/>
+                <outlet property="voiceBtn" destination="sWb-dH-odB" id="xtY-Su-xoQ"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="62"/>
         </tableViewCell>
@@ -116,6 +119,7 @@
         <image name="commentLikeButton" width="18" height="18"/>
         <image name="commentLikeButtonClick" width="19" height="19"/>
         <image name="play-voice-bg" width="62" height="22"/>
+        <image name="play-voice-icon-3" width="15" height="15"/>
         <image name="play-voice-stop" width="12" height="12"/>
     </resources>
 </document>
