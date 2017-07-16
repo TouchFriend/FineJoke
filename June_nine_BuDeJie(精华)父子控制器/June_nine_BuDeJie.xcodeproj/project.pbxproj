@@ -22,6 +22,14 @@
 		BF263F3A1EEBE61B0027FDCB /* UIImage+NJImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF263F1F1EEBE61B0027FDCB /* UIImage+NJImage.m */; };
 		BF263F3B1EEBE61B0027FDCB /* NJPublicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF263F231EEBE61B0027FDCB /* NJPublicVC.m */; };
 		BF263F3C1EEBE61B0027FDCB /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = BF263F281EEBE61B0027FDCB /* UIColor+Hex.m */; };
+		BF4441B41F187EC10040114E /* NJPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441B21F187EC10040114E /* NJPlayerViewController.m */; };
+		BF4441B51F187EC10040114E /* NJPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4441B31F187EC10040114E /* NJPlayerViewController.xib */; };
+		BF4441B91F189A5F0040114E /* NJCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441B71F189A5F0040114E /* NJCommentViewController.m */; };
+		BF4441BA1F189A5F0040114E /* NJCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4441B81F189A5F0040114E /* NJCommentViewController.xib */; };
+		BF4441BE1F1918CE0040114E /* NJCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441BC1F1918CE0040114E /* NJCommentCell.m */; };
+		BF4441BF1F1918CE0040114E /* NJCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4441BD1F1918CE0040114E /* NJCommentCell.xib */; };
+		BF4441C21F192EB40040114E /* NJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441C11F192EB40040114E /* NJComment.m */; };
+		BF4441C51F192EE00040114E /* NJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441C41F192EE00040114E /* NJUser.m */; };
 		BF47B7AD1EEFAF6900075AB2 /* NJADItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47B7AC1EEFAF6900075AB2 /* NJADItem.m */; };
 		BF47B7B61EEFF65700075AB2 /* NJSubTagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF47B7B41EEFF65700075AB2 /* NJSubTagVC.xib */; };
 		BF4B9BCC1EEAC5BB0071D386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B9BCB1EEAC5BB0071D386 /* main.m */; };
@@ -29,6 +37,10 @@
 		BF4C28451EF0149E0062E358 /* NJSubTagsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C28441EF0149E0062E358 /* NJSubTagsVC.m */; };
 		BF50DEBA1EEE87960073ABAF /* NJNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF50DEB91EEE87960073ABAF /* NJNavigationVC.m */; };
 		BF5118F31F167B3E0075FE87 /* NJChibaoGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5118F21F167B3E0075FE87 /* NJChibaoGifHeader.m */; };
+		BF5C29241F177C3D00A0CBD0 /* NJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C29231F177C3D00A0CBD0 /* NJRefreshNormalHeader.m */; };
+		BF5C29271F17812400A0CBD0 /* NJDIYRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C29261F17812400A0CBD0 /* NJDIYRefreshHeader.m */; };
+		BF5C292D1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C292C1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.m */; };
+		BF5C29301F1788DB00A0CBD0 /* NJHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C292F1F1788DB00A0CBD0 /* NJHTTPSessionManager.m */; };
 		BF6B62D91EF230C600867918 /* NJMeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6B62D81EF230C600867918 /* NJMeVC.storyboard */; };
 		BF6B62DC1EF25A8100867918 /* NJSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DB1EF25A8100867918 /* NJSquareItem.m */; };
 		BF6B62E11EF25C0D00867918 /* NJSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B62DF1EF25C0D00867918 /* NJSquareCell.m */; };
@@ -124,6 +136,19 @@
 		BF263F231EEBE61B0027FDCB /* NJPublicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPublicVC.m; sourceTree = "<group>"; };
 		BF263F271EEBE61B0027FDCB /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		BF263F281EEBE61B0027FDCB /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		BF4441B11F187EC10040114E /* NJPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJPlayerViewController.h; path = ../Others/NJPlayerViewController.h; sourceTree = "<group>"; };
+		BF4441B21F187EC10040114E /* NJPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJPlayerViewController.m; path = ../Others/NJPlayerViewController.m; sourceTree = "<group>"; };
+		BF4441B31F187EC10040114E /* NJPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJPlayerViewController.xib; path = ../Others/NJPlayerViewController.xib; sourceTree = "<group>"; };
+		BF4441B61F189A5F0040114E /* NJCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCommentViewController.h; sourceTree = "<group>"; };
+		BF4441B71F189A5F0040114E /* NJCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCommentViewController.m; sourceTree = "<group>"; };
+		BF4441B81F189A5F0040114E /* NJCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJCommentViewController.xib; sourceTree = "<group>"; };
+		BF4441BB1F1918CE0040114E /* NJCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJCommentCell.h; sourceTree = "<group>"; };
+		BF4441BC1F1918CE0040114E /* NJCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJCommentCell.m; sourceTree = "<group>"; };
+		BF4441BD1F1918CE0040114E /* NJCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJCommentCell.xib; sourceTree = "<group>"; };
+		BF4441C01F192EB40040114E /* NJComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJComment.h; sourceTree = "<group>"; };
+		BF4441C11F192EB40040114E /* NJComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJComment.m; sourceTree = "<group>"; };
+		BF4441C31F192EE00040114E /* NJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUser.h; sourceTree = "<group>"; };
+		BF4441C41F192EE00040114E /* NJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUser.m; sourceTree = "<group>"; };
 		BF47B7AB1EEFAF6900075AB2 /* NJADItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJADItem.h; sourceTree = "<group>"; };
 		BF47B7AC1EEFAF6900075AB2 /* NJADItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJADItem.m; sourceTree = "<group>"; };
 		BF47B7B41EEFF65700075AB2 /* NJSubTagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJSubTagVC.xib; path = ../Contrller/NJSubTagVC.xib; sourceTree = "<group>"; };
@@ -140,6 +165,14 @@
 		BF50DEBB1EEE899C0073ABAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF5118F11F167B3E0075FE87 /* NJChibaoGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJChibaoGifHeader.h; sourceTree = "<group>"; };
 		BF5118F21F167B3E0075FE87 /* NJChibaoGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJChibaoGifHeader.m; sourceTree = "<group>"; };
+		BF5C29221F177C3D00A0CBD0 /* NJRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		BF5C29231F177C3D00A0CBD0 /* NJRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		BF5C29251F17812400A0CBD0 /* NJDIYRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDIYRefreshHeader.h; sourceTree = "<group>"; };
+		BF5C29261F17812400A0CBD0 /* NJDIYRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDIYRefreshHeader.m; sourceTree = "<group>"; };
+		BF5C292B1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		BF5C292C1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		BF5C292E1F1788DB00A0CBD0 /* NJHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJHTTPSessionManager.h; sourceTree = "<group>"; };
+		BF5C292F1F1788DB00A0CBD0 /* NJHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJHTTPSessionManager.m; sourceTree = "<group>"; };
 		BF6B62D81EF230C600867918 /* NJMeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NJMeVC.storyboard; sourceTree = "<group>"; };
 		BF6B62DA1EF25A8100867918 /* NJSquareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJSquareItem.h; sourceTree = "<group>"; };
 		BF6B62DB1EF25A8100867918 /* NJSquareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJSquareItem.m; sourceTree = "<group>"; };
@@ -304,7 +337,6 @@
 		BF263EF61EEBE61B0027FDCB /* Essence(精华) */ = {
 			isa = PBXGroup;
 			children = (
-				BF263EF71EEBE61B0027FDCB /* Contrller */,
 				BF263EFA1EEBE61B0027FDCB /* Model */,
 				BF263EFB1EEBE61B0027FDCB /* View */,
 				BFC5EA671EF63E6B00E43A36 /* Others */,
@@ -316,10 +348,17 @@
 			isa = PBXGroup;
 			children = (
 				BFF170CB1EF776E0007655FD /* ChildViewControllers */,
+				BF4441B11F187EC10040114E /* NJPlayerViewController.h */,
+				BF4441B21F187EC10040114E /* NJPlayerViewController.m */,
+				BF4441B31F187EC10040114E /* NJPlayerViewController.xib */,
 				BF263EF81EEBE61B0027FDCB /* NJEssenceVC.h */,
 				BF263EF91EEBE61B0027FDCB /* NJEssenceVC.m */,
+				BF4441B61F189A5F0040114E /* NJCommentViewController.h */,
+				BF4441B71F189A5F0040114E /* NJCommentViewController.m */,
+				BF4441B81F189A5F0040114E /* NJCommentViewController.xib */,
 			);
-			path = Contrller;
+			name = Contrller;
+			path = ../Contrller;
 			sourceTree = "<group>";
 		};
 		BF263EFA1EEBE61B0027FDCB /* Model */ = {
@@ -329,6 +368,11 @@
 				BF79F20E1EFAA524009AD9C2 /* NJTopic.m */,
 				BF71DE2B1EFE45C3008E68FC /* NJTopicFrame.h */,
 				BF71DE2C1EFE45C3008E68FC /* NJTopicFrame.m */,
+				BF4441C01F192EB40040114E /* NJComment.h */,
+				BF4441C11F192EB40040114E /* NJComment.m */,
+				BF4441C31F192EE00040114E /* NJUser.h */,
+				BF4441C41F192EE00040114E /* NJUser.m */,
+				BF263EF71EEBE61B0027FDCB /* Contrller */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -868,6 +912,14 @@
 				BF79CB1A1F04EACD00628B84 /* NJSeeBigPictureVC.h */,
 				BF79CB1B1F04EACD00628B84 /* NJSeeBigPictureVC.m */,
 				BF79CB1C1F04EACD00628B84 /* NJSeeBigPictureVC.xib */,
+				BF5C29221F177C3D00A0CBD0 /* NJRefreshNormalHeader.h */,
+				BF5C29231F177C3D00A0CBD0 /* NJRefreshNormalHeader.m */,
+				BF5C29251F17812400A0CBD0 /* NJDIYRefreshHeader.h */,
+				BF5C29261F17812400A0CBD0 /* NJDIYRefreshHeader.m */,
+				BF5C292B1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.h */,
+				BF5C292C1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.m */,
+				BF5C292E1F1788DB00A0CBD0 /* NJHTTPSessionManager.h */,
+				BF5C292F1F1788DB00A0CBD0 /* NJHTTPSessionManager.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -906,6 +958,9 @@
 				BFF7CB871F00A0DD00A46971 /* NJTopicCell.h */,
 				BFF7CB881F00A0DD00A46971 /* NJTopicCell.m */,
 				BFF7CB891F00A0DD00A46971 /* NJTopicCell.xib */,
+				BF4441BB1F1918CE0040114E /* NJCommentCell.h */,
+				BF4441BC1F1918CE0040114E /* NJCommentCell.m */,
+				BF4441BD1F1918CE0040114E /* NJCommentCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1026,12 +1081,15 @@
 				BFA246291EEEE95F0004EE4E /* LaunchImage@2x.png in Resources */,
 				BF1DFE921EEFFFAB004C9C1F /* NJSubTagCell.xib in Resources */,
 				BFA246241EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png in Resources */,
+				BF4441B51F187EC10040114E /* NJPlayerViewController.xib in Resources */,
 				BFF7CBA31F00A87900A46971 /* NJTopicPictureView.xib in Resources */,
+				BF4441BA1F189A5F0040114E /* NJCommentViewController.xib in Resources */,
 				BFAA43681EF120A800611288 /* NJFastLoginView.xib in Resources */,
 				BFAA435C1EF1069F00611288 /* NJLoginRegisterVC.xib in Resources */,
 				BFAA43621EF10D5000611288 /* NJLoginRegisterView.xib in Resources */,
 				BFA246261EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png in Resources */,
 				BFA246231EEEE95F0004EE4E /* LaunchImage-568h@2x.png in Resources */,
+				BF4441BF1F1918CE0040114E /* NJCommentCell.xib in Resources */,
 				BFA484FA1EF38395008CA502 /* NJWebVC.xib in Resources */,
 				BFA246281EEEE95F0004EE4E /* LaunchImage.png in Resources */,
 				BFA245FD1EEEE90E0004EE4E /* Assets.xcassets in Resources */,
@@ -1106,13 +1164,18 @@
 				BFC5EA6A1EF63E9500E43A36 /* NJTitleButton.m in Sources */,
 				BF263F351EEBE61B0027FDCB /* NJMeVC.m in Sources */,
 				BF6B62DC1EF25A8100867918 /* NJSquareItem.m in Sources */,
+				BF5C29271F17812400A0CBD0 /* NJDIYRefreshHeader.m in Sources */,
 				BFF170D41EF77736007655FD /* NJVoiceVC.m in Sources */,
+				BF5C292D1F1787FF00A0CBD0 /* NJRefreshAutoNormalFooter.m in Sources */,
+				BF4441BE1F1918CE0040114E /* NJCommentCell.m in Sources */,
 				BF6B62E11EF25C0D00867918 /* NJSquareCell.m in Sources */,
 				BF263F321EEBE61B0027FDCB /* NJFriendTrendVC.m in Sources */,
+				BF4441C21F192EB40040114E /* NJComment.m in Sources */,
 				BFC05ACC1EEE69F80025F5CE /* UIView+NJFrame.m in Sources */,
 				BF4B9BCC1EEAC5BB0071D386 /* main.m in Sources */,
 				BF263F341EEBE61B0027FDCB /* NJTabBarController.m in Sources */,
 				BF263F371EEBE61B0027FDCB /* AppDelegate.m in Sources */,
+				BF5C29301F1788DB00A0CBD0 /* NJHTTPSessionManager.m in Sources */,
 				BFAA43661EF1209800611288 /* NJFastLoginView.m in Sources */,
 				BF5118F31F167B3E0075FE87 /* NJChibaoGifHeader.m in Sources */,
 				BF79F20F1EFAA524009AD9C2 /* NJTopic.m in Sources */,
@@ -1126,11 +1189,13 @@
 				BF4C28451EF0149E0062E358 /* NJSubTagsVC.m in Sources */,
 				BF47B7AD1EEFAF6900075AB2 /* NJADItem.m in Sources */,
 				BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */,
+				BF4441C51F192EE00040114E /* NJUser.m in Sources */,
 				BF1DFE911EEFFFAB004C9C1F /* NJSubTagCell.m in Sources */,
 				BFF7CB8A1F00A0DD00A46971 /* NJTopicCell.m in Sources */,
 				BFF170D11EF77727007655FD /* NJVideoVC.m in Sources */,
 				BF1DFE8C1EEFFA82004C9C1F /* NJSubTagItem.m in Sources */,
 				BFD6D4291F0357AF00D5A67F /* UIImageView+NJDownload.m in Sources */,
+				BF4441B41F187EC10040114E /* NJPlayerViewController.m in Sources */,
 				BFF7CB971F00A14700A46971 /* NJTopicVideoView.m in Sources */,
 				BF263F311EEBE61B0027FDCB /* NJEssenceVC.m in Sources */,
 				BFAA436C1EF1360A00611288 /* NJFastLoginButton.m in Sources */,
@@ -1138,8 +1203,10 @@
 				BFAA435B1EF1069F00611288 /* NJLoginRegisterVC.m in Sources */,
 				BFC05AC91EEE29BE0025F5CE /* NJTabBar.m in Sources */,
 				BF50DEBA1EEE87960073ABAF /* NJNavigationVC.m in Sources */,
+				BF5C29241F177C3D00A0CBD0 /* NJRefreshNormalHeader.m in Sources */,
 				BFF170DA1EF77751007655FD /* NJWordVC.m in Sources */,
 				BFF170DD1EF79EE4007655FD /* NJGlobalConst.m in Sources */,
+				BF4441B91F189A5F0040114E /* NJCommentViewController.m in Sources */,
 				BF79CB1D1F04EACD00628B84 /* NJSeeBigPictureVC.m in Sources */,
 				BF730D691EF3DDDD00F0CB05 /* NJFileTool.m in Sources */,
 				BFF7CB8F1F00A11700A46971 /* NJTopicPictureView.m in Sources */,

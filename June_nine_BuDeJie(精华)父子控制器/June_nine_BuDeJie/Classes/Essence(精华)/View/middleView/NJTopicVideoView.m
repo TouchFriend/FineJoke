@@ -11,6 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "NJTopic.h"
 #import "UIImageView+NJDownload.h"
+#import "NJPlayerViewController.h"
 @interface NJTopicVideoView ()
 @property (weak, nonatomic) IBOutlet UIImageView *topicImageV;
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
@@ -23,6 +24,9 @@
 {
     [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
+    //添加手势
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playVideo)];
+    [self addGestureRecognizer:tapGesture];
 }
 - (void)setTopic:(NJTopic *)topic
 {
@@ -49,5 +53,10 @@
     //播放时长
     self.timeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld",topic.videotime / 60,topic.videotime % 60];
 }
-
+- (void)playVideo
+{
+    NJPlayerViewController * playerVC = [[NJPlayerViewController alloc]init];
+    playerVC.topic = self.topic;
+    [self.window.rootViewController presentViewController:playerVC animated:YES completion:nil];
+}
 @end

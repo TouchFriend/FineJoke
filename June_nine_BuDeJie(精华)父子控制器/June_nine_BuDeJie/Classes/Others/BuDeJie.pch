@@ -17,6 +17,8 @@
 #import "NJGlobalConst.h"
 
 #define NJFunc NJLog(@"%s",__func__)
+//弱引用
+#define NJWeakSelf __weak typeof(self) weakSelf = self;
 //数据保存为plist
 //#abc == "abc"
 #define NJDataWriteToPlist(plistName) [responseObject writeToFile:[NSString stringWithFormat:@"/Users/TouchWorld/desktop/%@.plist",@#plistName] atomically:YES]

@@ -14,6 +14,12 @@
 #import "NJTopicCell.h"
 #import <SDImageCache.h>
 #import <MJRefresh/MJRefresh.h>
+#import "NJChibaoGifHeader.h"
+#import "NJRefreshNormalHeader.h"
+#import "NJDIYRefreshHeader.h"
+#import "NJRefreshAutoNormalFooter.h"
+#import "NJHTTPSessionManager.h"
+#import "NJCommentViewController.h"
 
 #define NJMargin 10
 @interface NJTopicVC ()
@@ -23,7 +29,7 @@
 /********* 广告 *********/
 @property(nonatomic,weak)UIView * adView;
 /********* 会话管理者 *********/
-@property(nonatomic,strong)AFHTTPSessionManager * manager;
+@property(nonatomic,strong)NJHTTPSessionManager * manager;
 
 
 /********* 帖子(数据) *********/
@@ -43,6 +49,11 @@ static NSString * const ID = @"NJTopicCellID";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleBarButtonDidRepeatClick) name:NJTitleBarButtonDidRepeatClickNotification object:nil];
     //设置刷新
     [self setupRefresh];
+    //设置表格
+    [self setupTable];
+}
+- (void)setupTable
+{
     //设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     //注册cell
@@ -51,7 +62,6 @@ static NSString * const ID = @"NJTopicCellID";
     self.tableView.backgroundColor = NJColor(215, 215, 215);
     //隐藏分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.allowsSelection = NO;
 }
 - (NJTopicType)type
 {
@@ -62,7 +72,7 @@ static NSString * const ID = @"NJTopicCellID";
 {
     if(_manager == nil)
     {
-        _manager = [AFHTTPSessionManager manager];
+        _manager = [NJHTTPSessionManager manager];
     }
     return _manager;
 }
@@ -101,6 +111,12 @@ static NSString * const ID = @"NJTopicCellID";
     [self.manager GET:NJCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task,  NSDictionary *  _Nullable responseObject) {
         //存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
+        //设置属性吗跟key值的映射
+        [NJTopic mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+            return @{
+                     @"ID" : @"id",
+                     };
+        }];
         //数据转模型
         self.topicsArrM = [NJTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         //        NJDataWriteToPlist(@"ttt");
@@ -183,9 +199,7 @@ static NSString * const ID = @"NJTopicCellID";
     self.adView = adView;
     self.tableView.tableHeaderView = adView;
     //下拉刷新控件
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
-    //根据拖拽比例自动切换透明度
-    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header = [NJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
     
     //一进入view就自动刷新
     [self.tableView.mj_header beginRefreshing];
@@ -194,7 +208,7 @@ static NSString * const ID = @"NJTopicCellID";
 - (void)setupUpDragRefresh
 {
     //上拉刷新控件
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
+    self.tableView.mj_footer = [NJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 #pragma mark - 标题栏按钮被点击
 - (void)titleBarButtonDidRepeatClick
@@ -232,6 +246,9 @@ static NSString * const ID = @"NJTopicCellID";
     NJTopic * topic = self.topicsArrM[indexPath.row];
     //设置对应的数据
     cell.topic = topic;
+    
+    //设置cell的选中样式
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //NJLog(@"%ld,%p",indexPath.row,cell);
     return cell;
 }
@@ -242,6 +259,12 @@ static NSString * const ID = @"NJTopicCellID";
     //取出对应的数据模型
     NJTopic * topic = self.topicsArrM[indexPath.row];
     return topic.cellHeight;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NJCommentViewController * commentVC = [[NJCommentViewController alloc]init];
+    commentVC.topic = self.topicsArrM[indexPath.row];
+    [self.navigationController pushViewController:commentVC animated:YES];
 }
 #pragma mark - dealloc
 - (void)dealloc

@@ -15,6 +15,9 @@ typedef NS_ENUM(NSInteger,NJTopicType)
 };
 #import <Foundation/Foundation.h>
 @interface NJTopic : NSObject
+/********* 帖子的ID *********/
+@property(nonatomic,assign)NSInteger ID;//id
+
 /********* 头像URL *********/
 @property(nonatomic,strong)NSString * profile_image;
 /********* 用户名 *********/
