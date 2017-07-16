@@ -26,4 +26,7 @@
 
 /** 语音文件的时长 */
 @property (nonatomic, assign) NSInteger voicetime;
+/********* cell高度 *********/
+@property(nonatomic,assign)CGFloat cellHeight;
+
 @end

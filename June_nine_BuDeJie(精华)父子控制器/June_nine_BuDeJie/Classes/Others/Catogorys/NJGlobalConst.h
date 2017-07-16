@@ -35,3 +35,5 @@ UIKIT_EXTERN NSString * const NJDownDragCanRefreshingText;
 UIKIT_EXTERN NSString * const NJisDownDragRefreshingText;
 //cell的间距（margin）
 UIKIT_EXTERN CGFloat const NJCellMargin;
+//cell较小的间距（smallMargin）
+UIKIT_EXTERN CGFloat const NJCellSmallMargin;

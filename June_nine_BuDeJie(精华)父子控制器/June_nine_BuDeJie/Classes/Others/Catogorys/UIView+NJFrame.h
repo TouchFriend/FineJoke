@@ -21,5 +21,6 @@
 @property(nonatomic,assign)CGFloat NJ_centerX;
 /********* 中心y坐标 *********/
 @property(nonatomic,assign)CGFloat NJ_centerY;
-
+/********* 从xib中加载视图 *********/
++ (instancetype)viewFromXib;
 @end

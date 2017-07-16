@@ -30,6 +30,7 @@
 		BF4441BF1F1918CE0040114E /* NJCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4441BD1F1918CE0040114E /* NJCommentCell.xib */; };
 		BF4441C21F192EB40040114E /* NJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441C11F192EB40040114E /* NJComment.m */; };
 		BF4441C51F192EE00040114E /* NJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441C41F192EE00040114E /* NJUser.m */; };
+		BF4441C81F19D6040040114E /* NJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4441C71F19D6040040114E /* NJTableViewHeaderFooterView.m */; };
 		BF47B7AD1EEFAF6900075AB2 /* NJADItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47B7AC1EEFAF6900075AB2 /* NJADItem.m */; };
 		BF47B7B61EEFF65700075AB2 /* NJSubTagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF47B7B41EEFF65700075AB2 /* NJSubTagVC.xib */; };
 		BF4B9BCC1EEAC5BB0071D386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B9BCB1EEAC5BB0071D386 /* main.m */; };
@@ -149,6 +150,8 @@
 		BF4441C11F192EB40040114E /* NJComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJComment.m; sourceTree = "<group>"; };
 		BF4441C31F192EE00040114E /* NJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUser.h; sourceTree = "<group>"; };
 		BF4441C41F192EE00040114E /* NJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUser.m; sourceTree = "<group>"; };
+		BF4441C61F19D6040040114E /* NJTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		BF4441C71F19D6040040114E /* NJTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		BF47B7AB1EEFAF6900075AB2 /* NJADItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJADItem.h; sourceTree = "<group>"; };
 		BF47B7AC1EEFAF6900075AB2 /* NJADItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJADItem.m; sourceTree = "<group>"; };
 		BF47B7B41EEFF65700075AB2 /* NJSubTagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJSubTagVC.xib; path = ../Contrller/NJSubTagVC.xib; sourceTree = "<group>"; };
@@ -337,6 +340,7 @@
 		BF263EF61EEBE61B0027FDCB /* Essence(精华) */ = {
 			isa = PBXGroup;
 			children = (
+				BF263EF71EEBE61B0027FDCB /* Contrller */,
 				BF263EFA1EEBE61B0027FDCB /* Model */,
 				BF263EFB1EEBE61B0027FDCB /* View */,
 				BFC5EA671EF63E6B00E43A36 /* Others */,
@@ -357,8 +361,7 @@
 				BF4441B71F189A5F0040114E /* NJCommentViewController.m */,
 				BF4441B81F189A5F0040114E /* NJCommentViewController.xib */,
 			);
-			name = Contrller;
-			path = ../Contrller;
+			path = Contrller;
 			sourceTree = "<group>";
 		};
 		BF263EFA1EEBE61B0027FDCB /* Model */ = {
@@ -372,7 +375,6 @@
 				BF4441C11F192EB40040114E /* NJComment.m */,
 				BF4441C31F192EE00040114E /* NJUser.h */,
 				BF4441C41F192EE00040114E /* NJUser.m */,
-				BF263EF71EEBE61B0027FDCB /* Contrller */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -961,6 +963,8 @@
 				BF4441BB1F1918CE0040114E /* NJCommentCell.h */,
 				BF4441BC1F1918CE0040114E /* NJCommentCell.m */,
 				BF4441BD1F1918CE0040114E /* NJCommentCell.xib */,
+				BF4441C61F19D6040040114E /* NJTableViewHeaderFooterView.h */,
+				BF4441C71F19D6040040114E /* NJTableViewHeaderFooterView.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1189,6 +1193,7 @@
 				BF4C28451EF0149E0062E358 /* NJSubTagsVC.m in Sources */,
 				BF47B7AD1EEFAF6900075AB2 /* NJADItem.m in Sources */,
 				BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */,
+				BF4441C81F19D6040040114E /* NJTableViewHeaderFooterView.m in Sources */,
 				BF4441C51F192EE00040114E /* NJUser.m in Sources */,
 				BF1DFE911EEFFFAB004C9C1F /* NJSubTagCell.m in Sources */,
 				BFF7CB8A1F00A0DD00A46971 /* NJTopicCell.m in Sources */,

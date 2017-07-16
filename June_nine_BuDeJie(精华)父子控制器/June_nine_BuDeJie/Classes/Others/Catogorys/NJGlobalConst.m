@@ -31,4 +31,6 @@ NSString * const NJDownDragCanRefreshingText = @"松开立即刷新";
 NSString * const NJisDownDragRefreshingText = @"正在刷新数据中";
 //cell的间距（margin）
 CGFloat const NJCellMargin = 10;
+//cell较小的间距（smallMargin）
+CGFloat const NJCellSmallMargin = 5;
 /*************** 精华控制器 ********************/

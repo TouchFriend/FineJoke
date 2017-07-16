@@ -51,8 +51,8 @@
                         <state key="highlighted" backgroundImage="commentLikeButton"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你好帅哦你好帅哦你好帅哦你好帅哦你好帅哦你好帅哦你好帅哦你好帅哦" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="005-FY-Gpv">
-                        <rect key="frame" x="60" y="38" width="211" height="41.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="60" y="40" width="211" height="39.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -66,9 +66,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWb-dH-odB">
+                        <rect key="frame" x="60" y="40" width="62" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="p6M-d4-Ks0"/>
+                            <constraint firstAttribute="width" constant="62" id="qSV-b8-rWy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <inset key="titleEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="12''" image="play-voice-stop" backgroundImage="play-voice-bg">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="005-FY-Gpv" firstAttribute="top" secondItem="jo5-4I-rpM" secondAttribute="bottom" constant="8" id="0qo-Op-SPl"/>
+                    <constraint firstItem="005-FY-Gpv" firstAttribute="top" secondItem="jo5-4I-rpM" secondAttribute="bottom" constant="10" id="0qo-Op-SPl"/>
                     <constraint firstItem="BB1-dg-C99" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="C1c-2R-22k"/>
                     <constraint firstAttribute="bottom" secondItem="005-FY-Gpv" secondAttribute="bottom" constant="10" id="GpG-Hw-3qc"/>
                     <constraint firstItem="qvt-UK-6mz" firstAttribute="top" secondItem="BB1-dg-C99" secondAttribute="top" id="Hnr-DQ-UsZ"/>
@@ -76,15 +89,25 @@
                     <constraint firstAttribute="trailing" secondItem="PMB-KD-jS1" secondAttribute="trailing" constant="10" id="R5U-qg-7XO"/>
                     <constraint firstItem="qvt-UK-6mz" firstAttribute="leading" secondItem="BB1-dg-C99" secondAttribute="trailing" constant="10" id="Shk-1G-aid"/>
                     <constraint firstItem="jo5-4I-rpM" firstAttribute="leading" secondItem="qvt-UK-6mz" secondAttribute="trailing" constant="10" id="TMK-G6-hlR"/>
+                    <constraint firstItem="sWb-dH-odB" firstAttribute="top" secondItem="jo5-4I-rpM" secondAttribute="bottom" constant="10" id="TqI-rU-A4i"/>
                     <constraint firstItem="BB1-dg-C99" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Znq-ql-7Hf"/>
                     <constraint firstItem="jo5-4I-rpM" firstAttribute="top" secondItem="BB1-dg-C99" secondAttribute="top" id="dMA-2l-m3I"/>
                     <constraint firstItem="PMB-KD-jS1" firstAttribute="leading" secondItem="jo5-4I-rpM" secondAttribute="trailing" constant="10" id="gnj-WX-IxE"/>
+                    <constraint firstItem="sWb-dH-odB" firstAttribute="leading" secondItem="qvt-UK-6mz" secondAttribute="leading" id="kMr-iD-Ixj"/>
                     <constraint firstItem="005-FY-Gpv" firstAttribute="leading" secondItem="qvt-UK-6mz" secondAttribute="leading" id="lNh-DS-noc"/>
                     <constraint firstItem="p6o-lH-cHP" firstAttribute="top" secondItem="PMB-KD-jS1" secondAttribute="bottom" constant="10" id="qJN-o6-gBE"/>
                     <constraint firstItem="p6o-lH-cHP" firstAttribute="leading" secondItem="005-FY-Gpv" secondAttribute="trailing" constant="10" id="vrg-re-zaY"/>
                     <constraint firstAttribute="trailing" secondItem="p6o-lH-cHP" secondAttribute="trailing" constant="10" id="y4f-nj-4cp"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="005-FY-Gpv" id="Day-aN-9yH"/>
+                <outlet property="likeCountLabel" destination="p6o-lH-cHP" id="TZo-Pd-GzV"/>
+                <outlet property="profileImageV" destination="BB1-dg-C99" id="i7Q-wW-Oes"/>
+                <outlet property="sexImageV" destination="qvt-UK-6mz" id="jwr-PH-3u9"/>
+                <outlet property="usernameLabel" destination="jo5-4I-rpM" id="OLq-R7-ndv"/>
+                <outlet property="voiceBtn" destination="sWb-dH-odB" id="PjD-oc-3NX"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="62"/>
         </tableViewCell>
     </objects>
@@ -92,5 +115,7 @@
         <image name="Profile_manIcon" width="13" height="13"/>
         <image name="commentLikeButton" width="18" height="18"/>
         <image name="commentLikeButtonClick" width="19" height="19"/>
+        <image name="play-voice-bg" width="62" height="22"/>
+        <image name="play-voice-stop" width="12" height="12"/>
     </resources>
 </document>

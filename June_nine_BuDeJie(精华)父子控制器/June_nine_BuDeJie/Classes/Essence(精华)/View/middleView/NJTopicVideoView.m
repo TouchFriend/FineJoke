@@ -12,6 +12,8 @@
 #import "NJTopic.h"
 #import "UIImageView+NJDownload.h"
 #import "NJPlayerViewController.h"
+#import "NJCommentViewController.h"
+
 @interface NJTopicVideoView ()
 @property (weak, nonatomic) IBOutlet UIImageView *topicImageV;
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
@@ -24,9 +26,9 @@
 {
     [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
-    //添加手势
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playVideo)];
-    [self addGestureRecognizer:tapGesture];
+//    //添加手势
+//    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playVideo)];
+//    [self addGestureRecognizer:tapGesture];
 }
 - (void)setTopic:(NJTopic *)topic
 {
@@ -55,8 +57,9 @@
 }
 - (void)playVideo
 {
-    NJPlayerViewController * playerVC = [[NJPlayerViewController alloc]init];
-    playerVC.topic = self.topic;
-    [self.window.rootViewController presentViewController:playerVC animated:YES completion:nil];
+//    NJPlayerViewController * playerVC = [[NJPlayerViewController alloc]init];
+//    playerVC.topic = self.topic;
+//    [self.window.rootViewController presentViewController:playerVC animated:YES completion:nil];
+    
 }
 @end

@@ -152,6 +152,7 @@
             self.videoView.hidden = NO;
             self.voiceView.hidden = YES;
             self.videoView.topic = topic;//设置数据模型
+#warning 播放层
         }
             break;
         case NJTopicTypeVoice://声音
