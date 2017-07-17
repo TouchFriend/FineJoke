@@ -47,6 +47,8 @@
     [self.window makeKeyAndVisible];
     //4.开始监听网络状态
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    //4.设置最大内存缓存容量
+    [SDImageCache sharedImageCache].maxMemoryCost = 100;
 //   //5.程序一启动，就清除过期缓存
 //    [[SDImageCache sharedImageCache] cleanDisk];
     return YES;

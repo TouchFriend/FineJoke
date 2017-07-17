@@ -137,6 +137,7 @@
      实际: contentView{414,120},voiceView{228,0}
      */
     //加载中间控件
+#warning 卡顿
     switch (topic.type) {
         case NJTopicTypePicture://图片
         {

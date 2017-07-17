@@ -248,7 +248,6 @@ static NSString * const ID = @"NJTopicCellID";
     NJTopic * topic = self.topicsArrM[indexPath.row];
     //设置对应的数据
     cell.topic = topic;
-    
     //设置cell的选中样式
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //NJLog(@"%ld,%p",indexPath.row,cell);
@@ -275,11 +274,12 @@ static NSString * const ID = @"NJTopicCellID";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 #pragma mark - TableViewDelegate方法
-//滚动过程中调用
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//停止滚动时调用
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     //清除内存缓存
-    [[SDImageCache sharedImageCache] clearMemory];
+//    [[SDImageCache sharedImageCache] clearMemory];
+    
 }
 #pragma mark - 获取参数a的值
 - (NSString *)aParameter

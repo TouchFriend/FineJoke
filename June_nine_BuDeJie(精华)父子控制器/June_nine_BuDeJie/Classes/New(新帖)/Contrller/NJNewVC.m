@@ -26,7 +26,8 @@
     //左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithNormalImage:[UIImage imageNamed:@"MainTagSubIcon"] highLightImage:[UIImage imageNamed:@"MainTagSubIconClick"] target:self action:@selector(tagSubBtnClick)];
     //中间标题
-    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+//    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    self.title = @"新帖";
 }
 - (void)tagSubBtnClick
 {

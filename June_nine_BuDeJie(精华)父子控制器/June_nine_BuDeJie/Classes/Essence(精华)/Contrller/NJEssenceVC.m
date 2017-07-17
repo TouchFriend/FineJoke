@@ -243,7 +243,8 @@ static NSInteger const underlineHeight = 2;
     //右边按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithNormalImage:[UIImage imageNamed:@"navigationButtonRandom"] highLightImage:[UIImage imageNamed:@"navigationButtonRandomClick"] target:self action:@selector(randomBtnClick)];
     //中间标题
-    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+//    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    self.title = @"精华";
 }
 #pragma mark - UIScrollViewDelegate方法
 //用户放开手后，scrollView停止滚动后调用(完成减速后调用)
