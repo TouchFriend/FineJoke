@@ -16,11 +16,11 @@
 #import <MJRefresh/MJRefresh.h>
 #import "NJChibaoGifHeader.h"
 #import "NJRefreshNormalHeader.h"
-#import "NJDIYRefreshHeader.h"
 #import "NJRefreshAutoNormalFooter.h"
 #import "NJHTTPSessionManager.h"
 #import "NJCommentViewController.h"
 #import "NJNewVC.h"
+#import "NJChibaoGifHeader.h"
 
 #define NJMargin 10
 @interface NJTopicVC ()
@@ -201,7 +201,7 @@ static NSString * const ID = @"NJTopicCellID";
 //    self.adView = adView;
 //    self.tableView.tableHeaderView = adView;
     //下拉刷新控件
-    self.tableView.mj_header = [NJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    self.tableView.mj_header = [NJChibaoGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
     
     //一进入view就自动刷新
     [self.tableView.mj_header beginRefreshing];

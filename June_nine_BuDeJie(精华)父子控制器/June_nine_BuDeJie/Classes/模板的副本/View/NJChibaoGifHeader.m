@@ -9,6 +9,15 @@
 #import "NJChibaoGifHeader.h"
 
 @implementation NJChibaoGifHeader
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if(self = [super initWithFrame:frame])
+    {
+        //根据拖拽比例自动切换透明度
+        self.automaticallyChangeAlpha = YES;
+    }
+    return self;
+}
 - (void)prepare
 {
     [super prepare];

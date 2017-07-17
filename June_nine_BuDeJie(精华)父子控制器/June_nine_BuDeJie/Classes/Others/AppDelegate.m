@@ -11,6 +11,8 @@
 #import "NJTabBarController.h"
 #import <AFNetworkReachabilityManager.h>
 #import <SDImageCache.h>
+#import "NJLauncheViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -37,8 +39,10 @@
 //    NJADViewController * adVC = [[NJADViewController alloc]init];
 //     // init ->  initWithNibName 1.首先判断有没有指定nibName 2.判断下有没有跟类名同名xib
 //    self.window.rootViewController = adVC;
-    NJTabBarController * tabBarController = [[NJTabBarController alloc]init];
-    self.window.rootViewController = tabBarController;
+//    NJTabBarController * tabBarController = [[NJTabBarController alloc]init];
+//    self.window.rootViewController = tabBarController;
+    NJLauncheViewController * launchVC = [[NJLauncheViewController alloc]init];
+    self.window.rootViewController = launchVC;
     //3.显示窗口
     [self.window makeKeyAndVisible];
     //4.开始监听网络状态

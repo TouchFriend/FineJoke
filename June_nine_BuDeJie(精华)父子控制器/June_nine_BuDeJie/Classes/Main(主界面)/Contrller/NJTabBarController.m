@@ -15,6 +15,7 @@
 #import "UIImage+NJImage.h"
 #import "NJTabBar.h"
 #import "NJNavigationVC.h"
+
 @interface NJTabBarController ()
 
 @end

@@ -42,7 +42,7 @@
     if(_top_cmt.count > 0)
     {
         //标题高度
-        cellHeight += 20;
+        cellHeight += 20 + 2 * NJCellMargin;
         //评论内容高度
         NSDictionary * topComment = [_top_cmt firstObject];
         NSString * userName = topComment[@"user"][@"username"];

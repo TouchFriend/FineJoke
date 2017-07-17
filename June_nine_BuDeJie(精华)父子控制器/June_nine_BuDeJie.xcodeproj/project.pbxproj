@@ -56,14 +56,6 @@
 		BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F11EEE92A70004EE4E /* NJSettingVC.m */; };
 		BFA245F91EEEE6A30004EE4E /* NJADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA245F81EEEE6A30004EE4E /* NJADViewController.m */; };
 		BFA245FB1EEEE6AE0004EE4E /* NJADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA245FA1EEEE6AE0004EE4E /* NJADViewController.xib */; };
-		BFA245FD1EEEE90E0004EE4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA245FC1EEEE90E0004EE4E /* Assets.xcassets */; };
-		BFA246231EEEE95F0004EE4E /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA2461C1EEEE95F0004EE4E /* LaunchImage-568h@2x.png */; };
-		BFA246241EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA2461D1EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png */; };
-		BFA246251EEEE95F0004EE4E /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA2461E1EEEE95F0004EE4E /* LaunchImage-700@2x.png */; };
-		BFA246261EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA2461F1EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png */; };
-		BFA246271EEEE95F0004EE4E /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA246201EEEE95F0004EE4E /* LaunchImage-800-Portrait-736h@3x.png */; };
-		BFA246281EEEE95F0004EE4E /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA246211EEEE95F0004EE4E /* LaunchImage.png */; };
-		BFA246291EEEE95F0004EE4E /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA246221EEEE95F0004EE4E /* LaunchImage@2x.png */; };
 		BFA484F91EF38395008CA502 /* NJWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA484F71EF38395008CA502 /* NJWebVC.m */; };
 		BFA484FA1EF38395008CA502 /* NJWebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA484F81EF38395008CA502 /* NJWebVC.xib */; };
 		BFAA43531EF1029200611288 /* NJFriendTrendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAA43521EF1029200611288 /* NJFriendTrendVC.xib */; };
@@ -80,6 +72,9 @@
 		BFC05AD01EEE6DBA0025F5CE /* NJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC05ACF1EEE6DBA0025F5CE /* NJNavigationBar.m */; };
 		BFC05AD31EEE70940025F5CE /* UIBarButtonItem+NJItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC05AD21EEE70940025F5CE /* UIBarButtonItem+NJItem.m */; };
 		BFC5EA6A1EF63E9500E43A36 /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC5EA691EF63E9500E43A36 /* NJTitleButton.m */; };
+		BFC6E7E01F1C600D00AFDB27 /* NJLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC6E7DF1F1C600D00AFDB27 /* NJLaunchView.m */; };
+		BFC6E7E31F1C68B200AFDB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6E7E21F1C68B200AFDB27 /* Assets.xcassets */; };
+		BFC6E7E61F1C6A8F00AFDB27 /* NJLauncheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC6E7E51F1C6A8F00AFDB27 /* NJLauncheViewController.m */; };
 		BFD644D21EF164CE00F0CF7E /* NJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD644D11EF164CE00F0CF7E /* NJTextField.m */; };
 		BFD644D61EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD644D51EF16C9500F0CF7E /* UITextField+NJPlaceHolder.m */; };
 		BFD6D4291F0357AF00D5A67F /* UIImageView+NJDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD6D4281F0357AF00D5A67F /* UIImageView+NJDownload.m */; };
@@ -201,14 +196,6 @@
 		BFA245F71EEEE6A30004EE4E /* NJADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJADViewController.h; sourceTree = "<group>"; };
 		BFA245F81EEEE6A30004EE4E /* NJADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJADViewController.m; sourceTree = "<group>"; };
 		BFA245FA1EEEE6AE0004EE4E /* NJADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJADViewController.xib; sourceTree = "<group>"; };
-		BFA245FC1EEEE90E0004EE4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BFA2461C1EEEE95F0004EE4E /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
-		BFA2461D1EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700-568h@2x.png"; sourceTree = "<group>"; };
-		BFA2461E1EEEE95F0004EE4E /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
-		BFA2461F1EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
-		BFA246201EEEE95F0004EE4E /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
-		BFA246211EEEE95F0004EE4E /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
-		BFA246221EEEE95F0004EE4E /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		BFA484F61EF38395008CA502 /* NJWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJWebVC.h; sourceTree = "<group>"; };
 		BFA484F71EF38395008CA502 /* NJWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJWebVC.m; sourceTree = "<group>"; };
 		BFA484F81EF38395008CA502 /* NJWebVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NJWebVC.xib; path = ../Contrller/NJWebVC.xib; sourceTree = "<group>"; };
@@ -237,6 +224,11 @@
 		BFC05AD21EEE70940025F5CE /* UIBarButtonItem+NJItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+NJItem.m"; sourceTree = "<group>"; };
 		BFC5EA681EF63E9500E43A36 /* NJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTitleButton.h; sourceTree = "<group>"; };
 		BFC5EA691EF63E9500E43A36 /* NJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTitleButton.m; sourceTree = "<group>"; };
+		BFC6E7DE1F1C600D00AFDB27 /* NJLaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJLaunchView.h; sourceTree = "<group>"; };
+		BFC6E7DF1F1C600D00AFDB27 /* NJLaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJLaunchView.m; sourceTree = "<group>"; };
+		BFC6E7E21F1C68B200AFDB27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFC6E7E41F1C6A8F00AFDB27 /* NJLauncheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJLauncheViewController.h; sourceTree = "<group>"; };
+		BFC6E7E51F1C6A8F00AFDB27 /* NJLauncheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJLauncheViewController.m; sourceTree = "<group>"; };
 		BFD644D01EF164CE00F0CF7E /* NJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTextField.h; sourceTree = "<group>"; };
 		BFD644D11EF164CE00F0CF7E /* NJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTextField.m; sourceTree = "<group>"; };
 		BFD644D41EF16C9500F0CF7E /* UITextField+NJPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NJPlaceHolder.h"; sourceTree = "<group>"; };
@@ -555,7 +547,6 @@
 				BFF170DB1EF79EE4007655FD /* NJGlobalConst.h */,
 				BFF170DC1EF79EE4007655FD /* NJGlobalConst.m */,
 				BFC05ACD1EEE6C9A0025F5CE /* BuDeJie.pch */,
-				BFA2461B1EEEE95F0004EE4E /* 启动图片 */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -688,7 +679,7 @@
 			children = (
 				BF263EF51EEBE61B0027FDCB /* Classes */,
 				BF4B9BDB1EEAC5BB0071D386 /* Info.plist */,
-				BFA245FC1EEEE90E0004EE4E /* Assets.xcassets */,
+				BFC6E7E21F1C68B200AFDB27 /* Assets.xcassets */,
 				BF4B9BCA1EEAC5BB0071D386 /* Supporting Files */,
 			);
 			path = June_nine_BuDeJie;
@@ -724,6 +715,7 @@
 		BF730D651EF3DDB500F0CB05 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6E7E11F1C602300AFDB27 /* 启动视图 */,
 				BF730D661EF3DDB500F0CB05 /* File */,
 			);
 			path = "Tools(工具)";
@@ -786,6 +778,8 @@
 			children = (
 				BFA245F71EEEE6A30004EE4E /* NJADViewController.h */,
 				BFA245F81EEEE6A30004EE4E /* NJADViewController.m */,
+				BFC6E7E41F1C6A8F00AFDB27 /* NJLauncheViewController.h */,
+				BFC6E7E51F1C6A8F00AFDB27 /* NJLauncheViewController.m */,
 			);
 			path = Contrller;
 			sourceTree = "<group>";
@@ -805,20 +799,6 @@
 				BFA245FA1EEEE6AE0004EE4E /* NJADViewController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BFA2461B1EEEE95F0004EE4E /* 启动图片 */ = {
-			isa = PBXGroup;
-			children = (
-				BFA2461C1EEEE95F0004EE4E /* LaunchImage-568h@2x.png */,
-				BFA2461D1EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png */,
-				BFA2461E1EEEE95F0004EE4E /* LaunchImage-700@2x.png */,
-				BFA2461F1EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png */,
-				BFA246201EEEE95F0004EE4E /* LaunchImage-800-Portrait-736h@3x.png */,
-				BFA246211EEEE95F0004EE4E /* LaunchImage.png */,
-				BFA246221EEEE95F0004EE4E /* LaunchImage@2x.png */,
-			);
-			path = "启动图片";
 			sourceTree = "<group>";
 		};
 		BFA484F21EF3837E008CA502 /* Web(打开网页) */ = {
@@ -940,6 +920,15 @@
 				BF5C292F1F1788DB00A0CBD0 /* NJHTTPSessionManager.m */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		BFC6E7E11F1C602300AFDB27 /* 启动视图 */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6E7DE1F1C600D00AFDB27 /* NJLaunchView.h */,
+				BFC6E7DF1F1C600D00AFDB27 /* NJLaunchView.m */,
+			);
+			name = "启动视图";
 			sourceTree = "<group>";
 		};
 		BFD644CF1EF1648D00F0CF7E /* NJTextField(自定义textField) */ = {
@@ -1090,7 +1079,7 @@
 			files = (
 				BF263F391EEBE61B0027FDCB /* Main.storyboard in Resources */,
 				BFF7CB9A1F00A16800A46971 /* NJTopicVoiceView.xib in Resources */,
-				BFA246271EEEE95F0004EE4E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
+				BFC6E7E31F1C68B200AFDB27 /* Assets.xcassets in Resources */,
 				BF6B62E21EF25C0D00867918 /* NJSquareCell.xib in Resources */,
 				BFAA43531EF1029200611288 /* NJFriendTrendVC.xib in Resources */,
 				BF47B7B61EEFF65700075AB2 /* NJSubTagVC.xib in Resources */,
@@ -1098,9 +1087,7 @@
 				BFF7CB8B1F00A0DD00A46971 /* NJTopicCell.xib in Resources */,
 				BF263F381EEBE61B0027FDCB /* LaunchScreen.storyboard in Resources */,
 				BF6B62D91EF230C600867918 /* NJMeVC.storyboard in Resources */,
-				BFA246291EEEE95F0004EE4E /* LaunchImage@2x.png in Resources */,
 				BF1DFE921EEFFFAB004C9C1F /* NJSubTagCell.xib in Resources */,
-				BFA246241EEEE95F0004EE4E /* LaunchImage-700-568h@2x.png in Resources */,
 				BF4441B51F187EC10040114E /* NJPlayerViewController.xib in Resources */,
 				BFF7CBA31F00A87900A46971 /* NJTopicPictureView.xib in Resources */,
 				BF4441BA1F189A5F0040114E /* NJCommentViewController.xib in Resources */,
@@ -1108,13 +1095,8 @@
 				BFAA435C1EF1069F00611288 /* NJLoginRegisterVC.xib in Resources */,
 				BFAA43621EF10D5000611288 /* NJLoginRegisterView.xib in Resources */,
 				BF10CE8F1F1BD53E000EC109 /* NJPublicVC.xib in Resources */,
-				BFA246261EEEE95F0004EE4E /* LaunchImage-800-667h@2x.png in Resources */,
-				BFA246231EEEE95F0004EE4E /* LaunchImage-568h@2x.png in Resources */,
 				BF4441BF1F1918CE0040114E /* NJCommentCell.xib in Resources */,
 				BFA484FA1EF38395008CA502 /* NJWebVC.xib in Resources */,
-				BFA246281EEEE95F0004EE4E /* LaunchImage.png in Resources */,
-				BFA245FD1EEEE90E0004EE4E /* Assets.xcassets in Resources */,
-				BFA246251EEEE95F0004EE4E /* LaunchImage-700@2x.png in Resources */,
 				BFA245FB1EEEE6AE0004EE4E /* NJADViewController.xib in Resources */,
 				BF79CB1E1F04EACD00628B84 /* NJSeeBigPictureVC.xib in Resources */,
 			);
@@ -1207,8 +1189,10 @@
 				BFF170CE1EF776FE007655FD /* NJAllVC.m in Sources */,
 				BF263F3B1EEBE61B0027FDCB /* NJPublicVC.m in Sources */,
 				BFF170D71EF77743007655FD /* NJPictureVC.m in Sources */,
+				BFC6E7E61F1C6A8F00AFDB27 /* NJLauncheViewController.m in Sources */,
 				BF4C28451EF0149E0062E358 /* NJSubTagsVC.m in Sources */,
 				BF47B7AD1EEFAF6900075AB2 /* NJADItem.m in Sources */,
+				BFC6E7E01F1C600D00AFDB27 /* NJLaunchView.m in Sources */,
 				BFA245F21EEE92A70004EE4E /* NJSettingVC.m in Sources */,
 				BF4441C81F19D6040040114E /* NJTableViewHeaderFooterView.m in Sources */,
 				BF4441C51F192EE00040114E /* NJUser.m in Sources */,
@@ -1381,7 +1365,6 @@
 			baseConfigurationReference = F9F50A6ECE431625E2664CEA /* Pods-June_nine_BuDeJie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = E435LNP339;
 				GCC_PREFIX_HEADER = June_nine_BuDeJie/Classes/Others/BuDeJie.pch;
 				INFOPLIST_FILE = June_nine_BuDeJie/Info.plist;
@@ -1397,7 +1380,6 @@
 			baseConfigurationReference = 955D607AB023EA190F6F7220 /* Pods-June_nine_BuDeJie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = E435LNP339;
 				GCC_PREFIX_HEADER = June_nine_BuDeJie/Classes/Others/BuDeJie.pch;
 				INFOPLIST_FILE = June_nine_BuDeJie/Info.plist;
