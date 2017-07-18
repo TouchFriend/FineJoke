@@ -134,6 +134,7 @@ static NSString * const ID = @"NJTopicCellID";
         if(error.code != NSURLErrorCancelled)
         {
             [SVProgressHUD showErrorWithStatus:@"网络繁忙,请稍后再试！"];
+            [SVProgressHUD dismissWithDelay:1.5];
         }
         //结束刷新
         [self.tableView.mj_header endRefreshing];
@@ -177,6 +178,7 @@ static NSString * const ID = @"NJTopicCellID";
         if(error.code != -999)
         {
             [SVProgressHUD showErrorWithStatus:@"网络繁忙,请稍后再试！"];
+            [SVProgressHUD dismissWithDelay:1.5];
         }
         //结束刷新
         [self.tableView.mj_footer endRefreshing];
@@ -279,7 +281,13 @@ static NSString * const ID = @"NJTopicCellID";
 {
     //清除内存缓存
 //    [[SDImageCache sharedImageCache] clearMemory];
-    
+//    //开启下载任务
+//    [self.manager.tasks makeObjectsPerformSelector:@selector(suspend)];
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    //暂停下载任务
+//    [self.manager.tasks makeObjectsPerformSelector:@selector(suspend)];
 }
 #pragma mark - 获取参数a的值
 - (NSString *)aParameter

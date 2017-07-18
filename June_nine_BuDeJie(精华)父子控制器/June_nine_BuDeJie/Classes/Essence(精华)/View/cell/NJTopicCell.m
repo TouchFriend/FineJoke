@@ -76,20 +76,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    //设置中间控件的frame
-    switch (self.topic.type) {
-        case NJTopicTypePicture:
-            self.pictureView.frame = self.topic.middleFrame;
-            break;
-        case NJTopicTypeVideo:
-            self.videoView.frame = self.topic.middleFrame;
-            break;
-        case NJTopicTypeVoice:
-            self.voiceView.frame = self.topic.middleFrame;
-            break;
-        default:
-            break;
-    }
+
 }
 - (void)setTopic:(NJTopic *)topic
 {
@@ -144,6 +131,7 @@
             self.pictureView.hidden = NO;
             self.videoView.hidden = YES;
             self.voiceView.hidden = YES;
+            self.pictureView.frame = self.topic.middleFrame;
             self.pictureView.topic = topic;//设置数据模型
         }
             break;
@@ -152,6 +140,7 @@
             self.pictureView.hidden = YES;
             self.videoView.hidden = NO;
             self.voiceView.hidden = YES;
+            self.videoView.frame = self.topic.middleFrame;
             self.videoView.topic = topic;//设置数据模型
 #warning 播放层
         }
@@ -161,6 +150,7 @@
             self.pictureView.hidden = YES;
             self.videoView.hidden = YES;
             self.voiceView.hidden = NO;
+            self.voiceView.frame = self.topic.middleFrame;
             self.voiceView.topic = topic;//设置数据模型
         }
             break;

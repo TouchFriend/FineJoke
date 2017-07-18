@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BVO-xd-AoH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FLAnimatedImageView" translatesAutoresizingMaskIntoConstraints="NO" id="BVO-xd-AoH">
                     <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
                 </imageView>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Uk-a3x">
@@ -66,6 +65,7 @@
         </view>
     </objects>
     <resources>
+        <image name="FLAnimatedImageView" width="16" height="16"/>
         <image name="common-gif" width="31" height="31"/>
         <image name="imageBackground" width="75" height="15"/>
         <image name="see-big-picture" width="19" height="19"/>

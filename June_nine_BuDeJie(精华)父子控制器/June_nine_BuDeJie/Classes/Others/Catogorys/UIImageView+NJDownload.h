@@ -18,7 +18,7 @@
  @param placeholder 占位图
  @param completeBlock 下载完成时回调
  */
-- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:( SDWebImageCompletionBlock)completeBlock;
+- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:( nullable SDExternalCompletionBlock)completeBlock;
 /**
  设置圆形头像
 

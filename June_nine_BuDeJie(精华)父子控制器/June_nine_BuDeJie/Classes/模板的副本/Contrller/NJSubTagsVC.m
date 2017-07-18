@@ -77,6 +77,11 @@ NSString * const ID = @"SubTag";
         //结束刷新
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if(error.code != -999)
+        {
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙,请稍后再试！"];
+            [SVProgressHUD dismissWithDelay:1.5];
+        }
         //结束刷新
         [self.tableView.mj_header endRefreshing];
     }];

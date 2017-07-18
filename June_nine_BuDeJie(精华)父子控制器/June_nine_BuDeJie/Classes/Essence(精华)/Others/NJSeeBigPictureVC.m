@@ -157,12 +157,14 @@
             {
                 if(oldStatus != PHAuthorizationStatusNotDetermined)//如果就得授权状态不是未决定
                 {
-                    [SVProgressHUD showErrorWithStatus:@"请去设置，允许访问相册"];
+                    [SVProgressHUD showErrorWithStatus:@"请去设置->隐私->照片，允许访问相册"];
+                    [SVProgressHUD dismissWithDelay:2.0];
                 }
             }
             else if(status == PHAuthorizationStatusRestricted)//无法访问相册
             {
                 [SVProgressHUD showErrorWithStatus:@"因系统原因，无法访问相册"];
+                [SVProgressHUD dismissWithDelay:1.5];
             }
         });
         

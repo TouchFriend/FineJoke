@@ -11,7 +11,7 @@
 #import <AFNetworkReachabilityManager.h>
 #import "UIImage+NJImage.h"
 @implementation UIImageView (NJDownload)
-- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:( SDWebImageCompletionBlock)completeBlock
+- (void)setOriginImageWithURL:(NSString *)originImageURL setThumbnailImageWithURL:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder complete:( nullable SDExternalCompletionBlock)completeBlock
 {
     AFNetworkReachabilityManager * reachabilityManager = [AFNetworkReachabilityManager sharedManager];
     //1.有没有原图(SDWebImage的图片缓存是用图片的url字符串作为key）
@@ -22,6 +22,7 @@
 //        self.image = originImage;
 //        completeBlock(originImage,nil,0,[NSURL URLWithString:originImageURL]);
         [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completeBlock];
+        
     }else
     {
         if([reachabilityManager isReachableViaWiFi])//wifi
